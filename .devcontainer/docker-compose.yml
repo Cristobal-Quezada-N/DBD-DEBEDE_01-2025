@@ -1,0 +1,59 @@
+# Usar "forwardPorts" en `devcontainer.json` para abrir puertos de **system** localmente.
+networks:
+  db-net:
+    driver: bridge
+# Directorios de datos de los servicios
+volumes:
+  postgres-data:
+    driver: local
+    driver_opts:
+      type: none
+      device: ./data/postgres
+      o: bind
+  pgadmin-data:
+    driver: local
+    driver_opts:
+      type: none
+      device: ./data/pgadmin
+      o: bind
+# Contenedores
+services:
+# Contenedor principal
+  system:
+    container_name: dev-container
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - ../..:/workspaces
+    command: sleep infinity
+    networks:
+      - db-net
+# Base de Datos
+  postgres:
+    container_name: postgres-host
+    image: postgres:17
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - db-net
+    ports:
+      - 5432:5432
+# Visualizador de la Base de Datos   
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4:9.3
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    networks:
+      - db-net
+    ports:
+      - 5050:80

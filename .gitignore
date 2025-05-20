@@ -1,0 +1,4 @@
+# Mantener los directorios de data para permitir la creacion del devcontainer
+.devcontainer/data/**
+!.devcontainer/data/postgres/.gitkeep
+!.devcontainer/data/pgadmin/.gitkeep

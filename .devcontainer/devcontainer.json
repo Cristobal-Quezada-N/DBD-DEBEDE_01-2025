@@ -1,0 +1,21 @@
+// Docs: https://aka.ms/devcontainer.json.
+{
+        "name": "PostgreSQL & PgAdmin",
+
+        // Compose para el maneo de la Imagen Base y Base de Datos
+        "dockerComposeFile": "docker-compose.yml",
+
+        // Imagen Base
+        "service": "system",
+        "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
+        // 5432: Base de Datos. PostgreSQL
+        // 5050: Administrador de Base de Datos, PgAdmin
+        "forwardPorts": [5432, 5050],
+
+        // Mostrar Informacion del sistema
+        "postCreateCommand": ".devcontainer/post-create.sh",
+
+        // Usuario del Devcontainer.
+        "remoteUser": "vscode"
+}
