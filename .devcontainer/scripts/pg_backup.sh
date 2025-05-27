@@ -15,7 +15,8 @@ source .devcontainer/.env
 set +a
 
 # Postgres Backup
-BCK_PG="$BCK_DIR/postgres-last.sql"
-pg_dump > $BCK_PG && echo "Backup de Postgres guardado en $BCK_PG"
+BCK_PG="$BCK_DIR/postgres-last.dump"
+pg_dump -Fc --file $BCK_PG && echo "Backup de Postgres guardado en $BCK_PG"
 
 sudo chown -R $(id -u):$(id -g) $BCK_DIR
+
