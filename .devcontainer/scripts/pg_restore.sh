@@ -15,5 +15,5 @@ source .devcontainer/.env
 set +a
 
 # Postgres Restaurar Backup
-BCK_PG="$BCK_DIR/postgres-last.sql"
-psql --file  $BCK_PG >/dev/null && echo "Backup $BCK_PG de Postgres Restaurado"
+BCK_PG="$BCK_DIR/postgres-last.dump"
+pg_restore --clean --dbname postgresdb $BCK_PG && echo "Backup $BCK_PG de Postgres Restaurado"
