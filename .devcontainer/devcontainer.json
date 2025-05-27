@@ -14,7 +14,7 @@
         "forwardPorts": [5432, 5050],
 
         // Mostrar Informacion del sistema
-        "postCreateCommand": ".devcontainer/post-create.sh",
+        "postCreateCommand": ".devcontainer/scripts/post-create.sh",
 
         // Usuario del Devcontainer.
         "remoteUser": "vscode"
