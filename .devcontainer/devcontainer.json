@@ -11,7 +11,7 @@
 
         // 5432: Base de Datos. PostgreSQL
         // 5050: Administrador de Base de Datos, PgAdmin
-        "forwardPorts": [5432, 5050],
+        "forwardPorts": [5432, 5050, 8080],
 
         // Mostrar Informacion del sistema
         "postCreateCommand": ".devcontainer/scripts/post-create.sh",
