@@ -17,5 +17,18 @@
         "postCreateCommand": ".devcontainer/scripts/post-create.sh",
 
         // Usuario del Devcontainer.
-        "remoteUser": "vscode"
+        "remoteUser": "vscode",
+
+        // Configuracion para Editores
+        "customizations": {
+                "vscode": {
+                        "settings": {
+                                "java.compile.nullAnalysis.mode": "automatic"
+                        },
+                        "extensions": [
+                                "vscjava.vscode-java-pack",
+                                "vscjava.vscode-gradle"
+                        ]
+                }
+        }
 }
