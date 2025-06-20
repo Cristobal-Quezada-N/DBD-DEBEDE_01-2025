@@ -4,7 +4,6 @@ INSERT INTO rol (id_rol, tipo_rol, nivel_permiso) VALUES
   (3, 'Cliente',   2);
 
 
-
 INSERT INTO usuario (id_usuario,id_rol,nombre_usuario,apellido,email,contraseña,direccion_usuario,fecha_de_registro
 ) VALUES
   ( 1,  3, 'Juan',      'Pérez',      'juan.perez@gmail.com',       'gjanhbjkju',           'Calle 1 Poniente 123, Santiago',         '2025-06-20'),
@@ -42,15 +41,31 @@ INSERT INTO carrito (id_carrito, productos_carro) VALUES
   (9, 9),
   (10, 4);
 
- INSERT INTO carrito_producto(id_usuario,id_carrito) VALUES
+
+INSERT INTO carrito_usuario(id_usuario,id_carrito) VALUES
  	(1, 3),
   	(2, 5),
   	(3, 2),
   	(4, 10),
   	(5, 7),
-	(6, 12),
+	(6, 8),
  	(7, 1),
   	(8, 6),
   	(9, 9),
   	(10, 4);
 
+
+
+INSERT INTO boleta (id_boleta, direccion_boleta, valor_boleta, numero_boleta) VALUES
+  (1, 'Calle 1 Poniente 123, Santiago', 15000, 1001),
+  (2, 'Av. Kennedy 5000, Vitacura', 20000, 1002),
+  (3, 'Av. Kennedy 5000, Vitacura', 12000, 1003),
+  (4, 'Calle 1 Poniente 123, Santiago', 18000, 1004),
+  (5, 'Av. Kennedy 5000, Vitacura', 22000, 1005),
+  (6, 'Calle 1 Poniente 123, Santiago', 25000, 1006),
+  (7, 'Calle 1 Poniente 123, Santiago', 14000, 1007),
+  (8, 'Av. Kennedy 5000, Vitacura', 30000, 1008),
+  (9, 'Av. Kennedy 5000, Vitacura', 17000, 1009),
+  (10, 'Calle 1 Poniente 123, Santiago', 19000, 1010);
+  
+  
