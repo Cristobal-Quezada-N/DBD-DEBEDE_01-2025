@@ -1,6 +1,6 @@
 | Rarity | Caracteristicas | Sigla|
 | ------------- | -------------- | -------------- | 
-| Common | Most Basic Pokémon | CC|
+| Common | Most Basic Pokémon | C|
 | Uncommon | Evolved Pokémon and most Trainer cards | UC|
 | Rare | Powerful but non-variant Pokémon cards, including Legendaries | R |
 | Double Rare | Pokémon ex | DR |
