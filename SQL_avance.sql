@@ -182,8 +182,8 @@ CREATE TABLE IF NOT EXISTS listadeseos_usuario (
 );
 
 CREATE TABLE IF NOT EXISTS carrito_producto (
-  id_carrito BIGINT NOT NULL,
-  id_producto BIGINT NOT NULL,
+  id_carrito BIGINT ,
+  id_producto BIGINT ,
 
   --REVISAR
   PRIMARY KEY (id_carrito, id_producto),
@@ -192,11 +192,19 @@ CREATE TABLE IF NOT EXISTS carrito_producto (
 	
 );
 
-INSERT INTO rol (id_rol, tipo_rol, nivel_permiso) VALUES
-  (1, 'Admin',   0),
-  (2, 'Jefe',  1),
-  (3, 'Cliente',   2);
-  
+CREATE TABLE IF NOT EXISTS lista_deseos_producto(
+	
+	id_lista_deseos BIGINT,
+	id_producto BIGINT    ,
+
+	 PRIMARY KEY (id_lista_deseos, id_producto),
+	 FOREIGN KEY (id_lista_deseos) REFERENCES carrito(id_carrito),
+	 FOREIGN KEY (id_producto) REFERENCES producto(id_producto)
+		
+);
+
+
+
 
 
 INSERT INTO usuario (id_usuario,id_rol,nombre_usuario,apellido,email,contraseña,direccion_usuario,fecha_de_registro
@@ -211,3 +219,27 @@ INSERT INTO usuario (id_usuario,id_rol,nombre_usuario,apellido,email,contraseña
   ( 8,  2, 'Valentina', 'Herrera',    'valentina.herrera@correo.cl','contraseña',           'Av. Kennedy 5000, Vitacura',               '2025-06-13'),
   ( 9,  3, 'Sebastián', 'Díaz',       'sebastian.diaz@correo.cl',   'albocampeon',          'Calle José Miguel Carrera 333, Talca',     '2025-06-12'),
   ( 10, 2, 'Camila',    'Fuentes',    'camila.fuentes@correo.cl',   'necesitoplata',        'Av. Manuel Montt 1500, Providencia',      '2025-06-11');
+
+INSERT INTO tienda (id_tienda, id_rol, nombre_tienda, direccion_tienda, url_producto_imagen) VALUES
+  (1, 2, 'PachoJuegos', 'Avenida Calamari', 'URL1'),
+  (2, 2, 'JuegosAdiccion', 'Monte Everest', 'URL2'),
+  (3, 2, 'TiendaMercy', 'Pasillo Tarantino', 'URL3'),
+  (4, 2, 'FisicoBGames', 'Avenida Estrellas', 'URL4'),
+  (5, 2, 'GamesFamily', 'Calle Balatro', 'URL5'),
+  (6, 2, 'RealJuegos', 'Avenida Calamari', 'URL6'),
+  (7, 2, 'SaintGames', 'Paso de los Santos', 'URL7'),
+  (8, 2, 'BalatroCastle', 'Camino del Joker', 'URL8'),
+  (9, 2, 'DarkGames', 'Avenida Estrellas', 'URL9'),
+  (10, 2, 'Ultimo Juego', 'Calle Balatro', 'URL10');
+
+ INSERT INTO medio_de_pago (id_medio, id_carrito, nombre_medio, url_medio) VALUES
+  (1, 3, 'Debito', 'URL1'),
+  (2, 1, 'Credito', 'URL2'),
+  (1, 4, 'Debito', 'URL1'),
+  (1, 6, 'Debito', 'URL1'),
+  (3, 8, 'Transferencia', 'URL3'),
+  (1, 2, 'Debito', 'URL1'),
+  (1, 9, 'Debito', 'URL1'),
+  (2, 10, 'Credito', 'URL2'),
+  (1, 7, 'Debito', 'URL1'),
+  (2, 5, 'Credito', 'URL2');
