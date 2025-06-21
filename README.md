@@ -1,3 +1,5 @@
+# LEER ARCHIVO [LEEEME.TXT](https://github.com/Cristobal-Quezada-N/DBD-DEBEDE_01-2025/blob/main/leeme.txt)
+
 # DBD DEBEDE Proyecto Final
 
 > Plataforma de e-commerce de TCG & Juegos de Mesa.
