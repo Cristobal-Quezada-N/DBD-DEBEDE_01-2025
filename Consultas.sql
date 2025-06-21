@@ -1,9 +1,19 @@
 -- Consulta 1
+INSERT INTO carrito_producto (id_carrito, id_producto)
+VALUES (1, 5);
+
 UPDATE carrito
-SET productos_carro = productos_carro + 1
+SET productos_carro = (
+    SELECT COUNT(*) 
+    FROM carrito_producto 
+    WHERE id_carrito = 1
+)
 WHERE id_carrito = 1;
 
 -- Consulta 2
+DELETE FROM carrito_producto
+WHERE id_carrito = 1 AND id_producto = 5;
+
 UPDATE carrito
 SET productos_carro = productos_carro - 1
 WHERE id_carrito = 1;
