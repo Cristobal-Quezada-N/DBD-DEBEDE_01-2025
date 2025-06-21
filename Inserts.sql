@@ -110,7 +110,6 @@ INSERT INTO compra (id_compra, id_carrito, id_boleta, id_medio, cantidad_comprad
   (20, 10, 1, 1, 7, '2025-06-11', '2025-06-12');
   
 
-/*
 INSERT INTO valoracion (id_valoracion, id_producto, comentario_valoracion, fecha_valoracion, puntuacion) 
 VALUES
   (1, 1, 'excelente carta, muy bien protegida.', '2020-01-16', 5.0),
@@ -128,7 +127,7 @@ VALUES
   (13, 13, 'terraforming mars es profundo y estrategico.', '2025-02-28', 5.0),
   (14, 14, 'pot of greed es esencial en cualquier coleccion.', '2025-05-29', 4.3), 
   (15, 15, 'gloomhaven, un juego masivo y epico.', '2025-06-10', 4.9);
-*/
+
    
 INSERT INTO carta_tcg(
         id_carta,
