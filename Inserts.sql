@@ -462,7 +462,7 @@ VALUES
 
 INSERT INTO listadeseos (id_lista_deseos, productos_en_descuento, cantidad_productos) 
 VALUES
-(1, 0, 3), 
+(1, 0, 3),
 (2, 1, 2), 
 (3, 0, 5), 
 (4, 0, 1), 
@@ -530,5 +530,3 @@ VALUES
   (13, 13, 'terraforming mars es profundo y estrategico.', '2025-02-28', 5.0),
   (14, 14, 'pot of greed es esencial en cualquier coleccion.', '2025-05-29', 4.3), 
   (15, 15, 'gloomhaven, un juego masivo y epico.', '2025-06-10', 4.9);
-
-
