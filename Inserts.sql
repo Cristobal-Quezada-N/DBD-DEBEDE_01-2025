@@ -130,7 +130,6 @@ VALUES
   (15, 15, 'gloomhaven, un juego masivo y epico.', '2025-06-10', 4.9);
 */
    
-  
 INSERT INTO carta_tcg(
         id_carta,
         nombre_carta,
@@ -145,7 +144,7 @@ INSERT INTO carta_tcg(
                 1,
                 'Woobat',
                 'Pokémon',
-                "- Card Number: 50/114 \n
+                '- Card Number: 50/114 \n
                  - Rarity: Common \n
                  - Card Type: Psychic \n
                  - HP: 50 \n
@@ -153,44 +152,31 @@ INSERT INTO carta_tcg(
                  - Attack 1:[1] Gust (10) \n
                  - Weakness: Lx2 \n
                  - Resistance: F-20 \n
-                 - Retreat Cost: 1",
+                 - Retreat Cost: 1',
                 'C',
                 'DD',
                 '2000-06-20',
                 60
-        )
-        (
+        ),
+ 		(
                 2,
                 'Electivire ex',
                 'Pokémon',
-                "- Card Number: 069/182 \n
+                '- Card Number: 069/182 \n
                  - Rarity: Double Rare \n
                  - Card Type: Lightning \n
                  - HP: 280 \n
-                 - Stage: Stage 1 \n
-                 - Attack 1:[LC] Dual Bolt \n
-                 This attack does 50 damage to 2 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.) \n
-                 - Attack 2:[LLC] High-Voltage Press (180+) \n
-                 If this Pokémon has at least 2 extra Energy attached (in addition to this attack's cost), this attack does 100 more damage. \n
-                 - Weakness: Fx2 \n
-                 - Resistance: \n
-                 - Retreat Cost: 4 \n
-                 - Artist: Narumi Sato
-                ",
+                 - Stage: Stage 1 \n',
                 'DR',
                 'NM',
                 '2000-01-21',
                 40
-        )
+        ),
         (
                 3,
-                'SSB Gogeta, Shining Blue Strongest Warrior',
+                'SSB Gogeta',
                 'Dragon Ball',
-                "Ultimate. \n
-                 Union-Fusion 2, draw 2 cards : 'Son Goku : Br' card and 'Vegeta :  Br' card. \n
-                 Auto: If your opponent has 3 or more energy : When this card is played, add up to 2 cards from your Z-Energy to your hand, and this card gains [Barrier], [Triple Attack], and [Blocker] until the end of your opponent's turn. \n
-                 Activate: Main/Battle [Once per turn] Choose up to 1 of your 'Gogeta' cards and it gets +10000 power for the turn. \n
-                 Number: BT26-138 \n
+                'Ultimate. \n
                  Card Type: Battle \n
                  Color: Blue \n
                  Energy(Color Cost): 8(BBBB) \n
@@ -199,49 +185,49 @@ INSERT INTO carta_tcg(
                  Combo Power: 10000 \n
                  Combo Energy: 1 \n
                  Era: DBS: Broly Saga \n
-                 Character: 'Gogeta : Br' \n",
+                 Character: "Gogeta : Br" \n',
                 'HR',
                 'LP',
                 '2001-04-20',
                 0
-        )
+        ),
         (
                 4,
                 'Enhanced Power Cell',
                 'Transformers',
-                "Upgrade — Utility \n
+                'Upgrade — Utility \n
                  The upgraded character has +3 [HP] \n
                  - Rarity: Uncommon \n
                  - Number: 16 \n
                  - Card Type: Battle Card \n
-                 - Battle Icons:[L]",
+                 - Battle Icons:[L]',
                 'UC',
                 'HP',
                 '2015-01-02',
                 99
-        )
+        ),
         (
                 5,
                 'Pocket Processor',
                 'Transformers',
-                "At the start of your turn -> Draw a card. \n
+                'At the start of your turn -> Draw a card. \n
                  Rarity: Rare \n
                  Number: 46 \n
                  Affiliation: Neutral \n
                  Card Type: Battle Card \n
                  Sub-Type: Upgrade - Utility \n
                  Battle Icons: [G] \n
-                 Stars: 0",
+                 Stars: 0',
                 'R',
                 'MP',
                 '2010-01-09',
                 20
-        )
+        ),
         (
                 6,
                 'Sith Legionnaire',
                 'Star Wars',
-                "While you control another Villainy unit, this unit gets +2/+0. \n
+                'While you control another Villainy unit, this unit gets +2/+0. \n
                  Rarity: Uncommon \n
                  Number: 081/264 \n
                  Aspect: Command;Villainy \n
@@ -251,30 +237,28 @@ INSERT INTO carta_tcg(
                  Power: 2 \n
                  HP: 2 \n
                  Arena Type: Ground \n
-                 Artist: Facundo Moyano",
+                 Artist: Facundo Moyano',
                 'UC',
                 'HP',
-                '2004-09-09'
+                '2004-09-09',
                 66
-        )
+        ),
         (
                 7,
-                "Papa Hummel's Old-Fashioned Pet Biscuit",
+                'Papa Hummel',
                 'World of Warcraft',
-                "Rarity: L \n
-                 Artist: Matt Cavotta",
+                'Rarity: L \n
+                 Artist: Matt Cavotta',
                 'R',
                 'LP',
                 '2001-01-04',
                 30
-        )
+        ),
         (
                 8,
                 'Raddus',
                 'Star Wars',
-                "While you control another Resistance card (unit, upgrade, or leader), this unit gains Sentinel. \n
-                 When Defeated: Deal damage equal to this unit's power to an enemy unit. \n
-                 Rarity: Rare \n
+                'Rarity: Rare \n
                  Number: 104/262 \n
                  Aspect: Command;Heroism \n
                  Card Type: Unit \n
@@ -283,18 +267,17 @@ INSERT INTO carta_tcg(
                  Power: 8 \n
                  HP: 6 \n
                  Arena Type: Space \n
-                 Artist:French Carlomagno",
+                 Artist:French Carlomagno',
                 'R',
                 'NM',
                 '2004-04-05',
                 30
-        )
+        ),
         (
-                9,
-                'Monkey.D.Luffy',
-                'One Piece',
-                "[Rush] \n
-                 [When Attacking] You may trash 1 card from your hand: Return up to 1 Character with a cost of 4 or less to the owner's hand. Then, give up to 1 rested DON!! card to your Leader or 1 of your Characters. \n
+        		9,
+        		'Mokey D. Luffy',
+          		'One Piece',
+          		'[Rush] \n
                  Rarity: SEC \n
                  Number: OP11-118 \n
                  Color: Blue \n
@@ -303,28 +286,28 @@ INSERT INTO carta_tcg(
                  Power: 8000 \n
                  Subtype(s): Straw Hat Crew \n
                  Attribute: Strike \n
-                 Artist:otton"
-                'HR',
-                'NM',
-                '2023-03-01',
-                20
-        )
+                 Artist:otton',
+          		'HR',
+          		'NM',
+          		'2023-03-01',
+          		20
+        ),
         (
                 10,
                 'Hyper Dragonoid Ultra',
                 'Bakugan',
-                "Rarity: Common \n
+                'Rarity: Common \n
                  Number: 151 \n
                  Card Type: Evo \n
                  Faction: Ventus \n
                  Energy Cost: 3 \n
                  B-Power: 900 \n
-                 Damage Rating: 5",
+                 Damage Rating: 5',
                 'CC',
                 'HP',
                 '2011-02-10',
                 63
-        );
+);
  
 INSERT INTO producto (id_producto, id_carta, id_juego_de_mesa, tipo_producto, fecha_subida, cantidad_vendidas, precio, url_imagen)
 VALUES
