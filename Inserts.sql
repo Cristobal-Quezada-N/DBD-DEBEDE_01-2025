@@ -69,3 +69,31 @@ INSERT INTO boleta (id_boleta, direccion_boleta, valor_boleta, numero_boleta) VA
   (10, 'Calle 1 Poniente 123, Santiago', 19000, 1010);
   
   
+INSERT INTO carta_tcg(
+        id_carta,
+        nombre_carta,
+        tipo_carta,
+        descripcion_carta,
+        rareza_carta,
+        estado_carta,
+        año_carta,
+        stock_carta
+) VALUES 
+        (
+                1,
+                'Woobat',
+                'Pokémon',
+                '- Card Number: 50/114
+                 - Rarity: Common
+                 - Card Type: Psychic
+                 - HP: 50
+                 - Stage: Basic
+                 - Attack 1:[1] Gust (10)
+                 - Weakness: Lx2
+                 - Resistance: F-20
+                 - Retreat Cost: 1',
+                'C',
+                'DF',
+                '2000-06-20',
+                10
+        );
