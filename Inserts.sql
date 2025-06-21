@@ -326,25 +326,148 @@ INSERT INTO carta_tcg(
                 63
         );
  
-/*
-INSERT INTO producto (id_producto, id_carta, id_juego_de_mesa, tipo_producto, fecha_subida, cantidad_vendidas, precio, url_imagen) VALUES
-(1, 1, NULL, 'Carta TCG', '2020-01-15', 50, 20000, 'url_dragon.jpg'),
-(2, NULL, 3, 'Juego Mesa', '2020-03-20', 30, 45000, 'url_catan.jpg'),
-(3, 5, NULL, 'Carta TCG', '2020-08-22', 40, 15000, 'url_mago.jpg'),
-(4, NULL, 3, 'Juego Mesa', '2020-10-25', 20, 38000, 'url_pandemic.jpg'),
-(5, 4, NULL, 'Carta TCG', '2021-01-28', 100, 2500, 'url_poli.jpg'),
-(6, NULL, 1, 'Juego Mesa', '2021-04-01', 60, 12000, 'url_sushi.jpg'),
-(7, 3, NULL, 'Carta TCG', '2021-10-05', 25, 30000, 'url_ash.jpg'),
-(8, NULL, 4, 'Juego Mesa', '2022-02-08', 15, 25000, 'url_amongus.jpg'),
-(9, NULL, NULL, 'Accesorio', '2022-05-10', 120, 5000, 'url_sleeves.jpg'),
-(10, 3, NULL, 'Carta TCG', '2023-07-12', 70, 8000, 'url_bewd.jpg'),
-(11, NULL, 5, 'Juego Mesa', '2023-10-15', 30, 18000, 'url_ajedrez.jpg'),
-(12, 1, NULL, 'Carta TCG', '2024-01-18', 35, 10000, 'url_dmg.jpg'),
-(13, NULL, 6, 'Juego Mesa', '2024-06-20', 25, 55000, 'url_terra.jpg'),
-(14, 2, NULL, 'Carta TCG', '2025-03-25', 90, 3000, 'url_pot.jpg'),
-(15, NULL, 1, 'Juego Mesa', '2025-05-28', 10, 80000, 'url_gloom.jpg');
-  
-  
+INSERT INTO producto (id_producto, id_carta, id_juego_de_mesa, tipo_producto, fecha_subida, cantidad_vendidas, precio, url_imagen)
+VALUES
+        (
+                1,
+                1,
+                NULL,
+                'Carta TCG',
+                '2020-01-15', 
+                50, 20000,
+                'URL1'
+        ),
+        (
+                2,
+                NULL,
+                3,
+                'Juego Mesa',
+                '2020-03-20',
+                30,
+                45000,
+                'URL2'
+        ),
+        (
+                3,
+                5, 
+                NULL, 
+                'Carta TCG',
+                '2020-08-22',
+                40,
+                15000,
+                'URL3'
+        ),
+        (
+                4,
+                NULL,
+                1,
+                'Juego Mesa',
+                '2020-10-25',
+                20,
+                38000,
+                'URL4'
+        ),
+        (
+                5,
+                4,
+                NULL,
+                'Carta TCG',
+                '2021-01-28',
+                100,
+                2500,
+                'URL5'
+        ),
+        (
+                6,
+                NULL,
+                2,
+                'Juego Mesa',
+                '2021-04-01',
+                60,
+                12000,
+                'URL6'
+        ),
+        (
+                7,
+                3,
+                NULL,
+                'Carta TCG',
+                '2021-10-05',
+                25,
+                30000,
+                'URL7'
+        ),
+        (
+                8,
+                NULL,
+                4,
+                'Juego Mesa',
+                '2022-02-08',
+                15,
+                25000,
+                'URL8'
+        ),
+        (
+                10,
+                10,
+                NULL,
+                'Carta TCG',
+                '2023-07-12',
+                70,
+                8000,
+                'URL9'
+        ),
+        (
+                11,
+                NULL,
+                5,
+                'Juego Mesa',
+                '2023-10-15',
+                30,
+                18000,
+                'URL10'
+        ),
+        (
+                12,
+                9,
+                NULL,
+                'Carta TCG',
+                '2024-01-18',
+                35,
+                10000, 
+                'URL11'
+        ),
+        (
+                13,
+                NULL,
+                6,
+                'Juego Mesa',
+                '2024-06-20',
+                25,
+                55000,
+                'URL12'
+        ),
+        (
+                14,
+                2,
+                NULL,
+                'Carta TCG',
+                '2025-03-25',
+                90,
+                3000,
+                'URL13'
+        ),
+        (
+                15,
+                NULL,
+                8,
+                'Juego Mesa',
+                '2025-05-28',
+                10,
+                80000,
+                'URL14'
+        );
+
 INSERT INTO tienda_producto (id_tienda, id_producto) 
 VALUES
   (1, 1), 
@@ -362,7 +485,7 @@ VALUES
   (6, 13), 
   (7, 14), 
   (7, 15);
- */
+
 
 INSERT INTO listadeseos (id_lista_deseos, productos_en_descuento, cantidad_productos) 
 VALUES
