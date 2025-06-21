@@ -62,14 +62,6 @@ INSERT INTO carrito_usuario(id_usuario,id_carrito) VALUES
   	(9, 9),
   	(10, 4);
 
-INSERT INTO carrito_producto (id_carrito, id_producto) 
-VALUES
-(1, 1), (1, 9), (2, 2),
-(3, 3), (4, 4), (5, 5),
-(6, 6), (7, 7), (8, 8),
-(9, 10), (10, 11), (11, 12),
-(12, 13), (13, 14), (14, 15);
-
 INSERT INTO boleta (id_boleta, direccion_boleta, valor_boleta, numero_boleta) VALUES
   (1, 'Calle 1 Poniente 123, Santiago', 15000, 1001),
   (2, 'Av. Kennedy 5000, Vitacura', 20000, 1002),
@@ -117,25 +109,6 @@ INSERT INTO compra (id_compra, id_carrito, id_boleta, id_medio, cantidad_comprad
   (19, 9, 10, 2, 5, '2025-06-12', '2025-06-13'),
   (20, 10, 1, 1, 7, '2025-06-11', '2025-06-12');
   
-
-INSERT INTO valoracion (id_valoracion, id_producto, comentario_valoracion, fecha_valoracion, puntuacion) 
-VALUES
-  (1, 1, 'excelente carta, muy bien protegida.', '2020-01-16', 5.0),
-  (2, 2, 'juego de mesa muy divertido para amigos.', '2020-03-27', 4.5),
-  (3, 3, 'llego en perfecto estado, un clasico.', '2021-05-05', 5.0),
-  (4, 4, 'pandemic es un imprescindible, muy rejugable.', '2021-08-19', 4.8),
-  (5, 5, 'un staple para cualquier mazo de fusion.', '2022-03-20', 4.0),
-  (6, 6, 'sushi go! es rapido y facil de aprender.', '2022-05-01', 4.2),
-  (7, 7, 'ash blossom, carta meta, llego rapido.', '2023-10-22', 4.9),
-  (8, 8, 'among us de mesa es fiel al videojuego.', '2023-12-02', 4.0),
-  (9, 9, 'protectores de buena calidad, muy contento.', '2024-01-14', 4.7),
-  (10, 10, 'el dragon blanco mas iconico, perfecto.', '2024-03-25', 5.0),
-  (11, 11, 'ajedrez de buena calidad, piezas robustas.', '2024-08-12', 4.5),
-  (12, 12, 'dark magician girl es hermosa, coleccionable.', '2024-11-27', 4.8),
-  (13, 13, 'terraforming mars es profundo y estrategico.', '2025-02-28', 5.0),
-  (14, 14, 'pot of greed es esencial en cualquier coleccion.', '2025-05-29', 4.3), 
-  (15, 15, 'gloomhaven, un juego masivo y epico.', '2025-06-10', 4.9);
-
    
 INSERT INTO carta_tcg(
         id_carta,
@@ -472,13 +445,13 @@ INSERT INTO tienda_producto (id_tienda, id_producto)
 VALUES
   (1, 1), 
   (1, 2), 
-  (1, 9),
   (2, 3), 
   (2, 4), 
   (3, 5),
   (3, 6), 
   (4, 7), 
   (4, 8),
+  (1, 9),
   (5, 10), 
   (5, 11), 
   (6, 12),
@@ -525,3 +498,37 @@ VALUES
 (9, 4),   (10, 5),  (11, 6),
 (12, 7),  (13, 8),  (14, 9),
 (15, 10);
+
+INSERT INTO carrito_producto (id_carrito, id_producto) 
+VALUES
+        (1, 1),
+        (1, 9),
+        (2, 2),
+        (3, 3),
+        (4, 4),
+        (5, 5),
+        (6, 6),
+        (7, 7),
+        (8, 8),
+        (9, 10),
+        (10, 11);
+
+INSERT INTO valoracion (id_valoracion, id_producto, comentario_valoracion, fecha_valoracion, puntuacion) 
+VALUES
+  (1, 1, 'excelente carta, muy bien protegida.', '2020-01-16', 5.0),
+  (2, 2, 'juego de mesa muy divertido para amigos.', '2020-03-27', 4.5),
+  (3, 3, 'llego en perfecto estado, un clasico.', '2021-05-05', 5.0),
+  (4, 4, 'pandemic es un imprescindible, muy rejugable.', '2021-08-19', 4.8),
+  (5, 5, 'un staple para cualquier mazo de fusion.', '2022-03-20', 4.0),
+  (6, 6, 'sushi go! es rapido y facil de aprender.', '2022-05-01', 4.2),
+  (7, 7, 'ash blossom, carta meta, llego rapido.', '2023-10-22', 4.9),
+  (8, 8, 'among us de mesa es fiel al videojuego.', '2023-12-02', 4.0),
+  (9, 9, 'protectores de buena calidad, muy contento.', '2024-01-14', 4.7),
+  (10, 10, 'el dragon blanco mas iconico, perfecto.', '2024-03-25', 5.0),
+  (11, 11, 'ajedrez de buena calidad, piezas robustas.', '2024-08-12', 4.5),
+  (12, 12, 'dark magician girl es hermosa, coleccionable.', '2024-11-27', 4.8),
+  (13, 13, 'terraforming mars es profundo y estrategico.', '2025-02-28', 5.0),
+  (14, 14, 'pot of greed es esencial en cualquier coleccion.', '2025-05-29', 4.3), 
+  (15, 15, 'gloomhaven, un juego masivo y epico.', '2025-06-10', 4.9);
+
+
