@@ -24,8 +24,8 @@ CREATE TABLE IF NOT EXISTS juego_de_mesa (
 -- Tabla Producto
 CREATE TABLE IF NOT EXISTS producto (
     id_producto BIGINT PRIMARY KEY,
-	id_carta BIGINT,
-	id_juego_de_mesa BIGINT,
+	  id_carta BIGINT  NULL,
+	  id_juego_de_mesa BIGINT NULL,
     tipo_producto VARCHAR(32),
     fecha_subida DATE,
     cantidad_vendidas BIGINT,
@@ -122,8 +122,8 @@ CREATE TABLE IF NOT EXISTS compra (
 );
 
 CREATE TABLE IF NOT EXISTS tienda_producto (
-  id_tienda BIGINT NOT NULL,
-  id_producto BIGINT NOT NULL,
+  id_tienda BIGINT,
+  id_producto BIGINT,
 
   PRIMARY KEY (id_tienda, id_producto),
   FOREIGN KEY (id_tienda) REFERENCES tienda(id_tienda),
@@ -131,8 +131,8 @@ CREATE TABLE IF NOT EXISTS tienda_producto (
 );
 
 CREATE TABLE IF NOT EXISTS boleta_producto (
-  id_boleta BIGINT NOT NULL,
-  id_producto BIGINT NOT NULL,
+  id_boleta BIGINT,
+  id_producto BIGINT,
 
   PRIMARY KEY (id_boleta, id_producto),
   FOREIGN KEY (id_boleta) REFERENCES boleta(id_boleta),
@@ -146,8 +146,8 @@ CREATE TABLE IF NOT EXISTS listadeseos (
 );
 
 CREATE TABLE IF NOT EXISTS listadeseos_usuario (
-  id_usuario BIGINT NOT NULL,
-  id_lista_deseos BIGINT NOT NULL,
+  id_usuario BIGINT ,
+  id_lista_deseos BIGINT,
 
   PRIMARY KEY (id_usuario, id_lista_deseos),
   FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
