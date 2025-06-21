@@ -197,4 +197,40 @@ VALUES
   (7, 14), 
   (7, 15);
  */
+
+INSERT INTO listadeseos (id_lista_deseos, productos_en_descuento, cantidad_productos) 
+VALUES
+(1, 0, 3), 
+(2, 1, 2), 
+(3, 0, 5), 
+(4, 0, 1), 
+(5, 2, 4),
+(6, 0, 2), 
+(7, 1, 1), 
+(8, 0, 3), 
+(9, 0, 2), 
+(10, 1, 1);
+
+
+INSERT INTO listadeseos_usuario (id_usuario, id_lista_deseos) 
+VALUES
+  (1, 1), 
+  (2, 2), 
+  (3, 3), 
+  (4, 4), 
+  (5, 5),
+  (6, 6), 
+  (7, 7), 
+  (8, 8), 
+  (9, 9), 
+  (10, 10);
+  
+  
+
+
+
+
+
+
+ 
  
