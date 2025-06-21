@@ -61,7 +61,15 @@ INSERT INTO carrito_usuario(id_usuario,id_carrito) VALUES
   	(8, 6),
   	(9, 9),
   	(10, 4);
-    
+
+INSERT INTO carrito_producto (id_carrito, id_producto) 
+VALUES
+(1, 1), (1, 9), (2, 2),
+(3, 3), (4, 4), (5, 5),
+(6, 6), (7, 7), (8, 8),
+(9, 10), (10, 11), (11, 12),
+(12, 13), (13, 14), (14, 15);
+
 INSERT INTO boleta (id_boleta, direccion_boleta, valor_boleta, numero_boleta) VALUES
   (1, 'Calle 1 Poniente 123, Santiago', 15000, 1001),
   (2, 'Av. Kennedy 5000, Vitacura', 20000, 1002),
@@ -505,3 +513,15 @@ VALUES
   (8, 8), 
   (9, 9), 
   (10, 10);
+
+INSERT INTO listadeseos_producto (id_lista_deseos, id_producto) 
+VALUES
+(1, 1),   (1, 7),   (1, 10),
+(2, 2),   (2, 8),   (2, 11),
+(3, 3),   (3, 9),   (3, 12),
+(4, 4),   (4, 13),  (5, 5),
+(5, 14),  (6, 6),   (6, 15),
+(7, 1),   (7, 2),   (8, 3),
+(9, 4),   (10, 5),  (11, 6),
+(12, 7),  (13, 8),  (14, 9),
+(15, 10);
