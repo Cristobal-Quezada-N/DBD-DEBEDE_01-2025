@@ -31,19 +31,11 @@ INSERT INTO tienda (id_tienda, id_rol, nombre_tienda, direccion_tienda, url_prod
   (10, 1, 'Ultimo Juego', 'Calle Balatro', 'URL10');
   
   
- /*
- INSERT INTO medio_de_pago (id_medio, id_carrito, nombre_medio, url_medio) VALUES
-  (1, 3, 'Debito', 'URL1'),
-  (2, 1, 'Credito', 'URL2'),
-  (1, 4, 'Debito', 'URL1'),
-  (1, 6, 'Debito', 'URL1'),
-  (3, 8, 'Transferencia', 'URL3'),
-  (1, 2, 'Debito', 'URL1'),
-  (1, 9, 'Debito', 'URL1'),
-  (2, 10, 'Credito', 'URL2'),
-  (1, 7, 'Debito', 'URL1'),
-  (2, 5, 'Credito', 'URL2');
-  */
+INSERT INTO medio_de_pago (id_medio, id_carrito, nombre_medio, url_medio) 
+VALUES
+(1, NULL, 'webpay', 'url_webpay.jpg'), (2, NULL, 'paypal', 'url_paypal.jpg'), (3, NULL, 'criptomoneda', 'url_crypto.jpg'),
+(4, NULL, 'mercado pago', 'url_mercadopago.jpg'),(5, NULL, 'vale regalo', 'url_regalo.jpg');
+
 
 INSERT INTO carrito (id_carrito, productos_carro) VALUES
   (1, 3),
@@ -94,9 +86,8 @@ INSERT INTO juego_de_mesa (id_juego_de_mesa, tipo_juego_de_mesa, stock_juegos_me
   (7, 'Familia', 130, 'Jenga', 'Un juego físico de destreza en el que los jugadores deben retirar bloques de madera sin que se caiga la torre.'),
   (8, 'Estratégia', 110, 'Risk', 'Un juego de conquista mundial donde los jugadores deben ganar territorios a través de batallas estratégicas.');
 
-     
-/*   
-INSERT INTO compra (id_compra, id_carrito, id_boleta, id_medio, cantidad_comprada, fecha_compra, fechar_emision_boleta) VALUES
+
+INSERT INTO compra (id_compra, id_carrito, id_boleta, id_medio, cantidad_comprada, fecha_compra, fecha_emision_boleta) VALUES
   (1, 1, 1, 1, 3, '2025-06-20', '2025-06-21'),
   (2, 2, 2, 2, 5, '2025-06-19', '2025-06-20'),
   (3, 3, 3, 1, 2, '2025-06-18', '2025-06-19'),
@@ -118,8 +109,27 @@ INSERT INTO compra (id_compra, id_carrito, id_boleta, id_medio, cantidad_comprad
   (19, 9, 10, 2, 5, '2025-06-12', '2025-06-13'),
   (20, 10, 1, 1, 7, '2025-06-11', '2025-06-12');
   
+
+/*
+INSERT INTO valoracion (id_valoracion, id_producto, comentario_valoracion, fecha_valoracion, puntuacion) 
+VALUES
+  (1, 1, 'excelente carta, muy bien protegida.', '2020-01-16', 5.0),
+  (2, 2, 'juego de mesa muy divertido para amigos.', '2020-03-27', 4.5),
+  (3, 3, 'llego en perfecto estado, un clasico.', '2021-05-05', 5.0),
+  (4, 4, 'pandemic es un imprescindible, muy rejugable.', '2021-08-19', 4.8),
+  (5, 5, 'un staple para cualquier mazo de fusion.', '2022-03-20', 4.0),
+  (6, 6, 'sushi go! es rapido y facil de aprender.', '2022-05-01', 4.2),
+  (7, 7, 'ash blossom, carta meta, llego rapido.', '2023-10-22', 4.9),
+  (8, 8, 'among us de mesa es fiel al videojuego.', '2023-12-02', 4.0),
+  (9, 9, 'protectores de buena calidad, muy contento.', '2024-01-14', 4.7),
+  (10, 10, 'el dragon blanco mas iconico, perfecto.', '2024-03-25', 5.0),
+  (11, 11, 'ajedrez de buena calidad, piezas robustas.', '2024-08-12', 4.5),
+  (12, 12, 'dark magician girl es hermosa, coleccionable.', '2024-11-27', 4.8),
+  (13, 13, 'terraforming mars es profundo y estrategico.', '2025-02-28', 5.0),
+  (14, 14, 'pot of greed es esencial en cualquier coleccion.', '2025-05-29', 4.3), 
+  (15, 15, 'gloomhaven, un juego masivo y epico.', '2025-06-10', 4.9);
 */
-  
+   
   
 INSERT INTO carta_tcg(
         id_carta,
@@ -149,3 +159,42 @@ INSERT INTO carta_tcg(
                 '2000-06-20',
                 10
         );
+ 
+/*
+INSERT INTO producto (id_producto, id_carta, id_juego_de_mesa, tipo_producto, fecha_subida, cantidad_vendidas, precio, url_imagen) VALUES
+(1, 1, NULL, 'Carta TCG', '2020-01-15', 50, 20000, 'url_dragon.jpg'),
+(2, NULL, 3, 'Juego Mesa', '2020-03-20', 30, 45000, 'url_catan.jpg'),
+(3, 5, NULL, 'Carta TCG', '2020-08-22', 40, 15000, 'url_mago.jpg'),
+(4, NULL, 3, 'Juego Mesa', '2020-10-25', 20, 38000, 'url_pandemic.jpg'),
+(5, 4, NULL, 'Carta TCG', '2021-01-28', 100, 2500, 'url_poli.jpg'),
+(6, NULL, 1, 'Juego Mesa', '2021-04-01', 60, 12000, 'url_sushi.jpg'),
+(7, 3, NULL, 'Carta TCG', '2021-10-05', 25, 30000, 'url_ash.jpg'),
+(8, NULL, 4, 'Juego Mesa', '2022-02-08', 15, 25000, 'url_amongus.jpg'),
+(9, NULL, NULL, 'Accesorio', '2022-05-10', 120, 5000, 'url_sleeves.jpg'),
+(10, 3, NULL, 'Carta TCG', '2023-07-12', 70, 8000, 'url_bewd.jpg'),
+(11, NULL, 5, 'Juego Mesa', '2023-10-15', 30, 18000, 'url_ajedrez.jpg'),
+(12, 1, NULL, 'Carta TCG', '2024-01-18', 35, 10000, 'url_dmg.jpg'),
+(13, NULL, 6, 'Juego Mesa', '2024-06-20', 25, 55000, 'url_terra.jpg'),
+(14, 2, NULL, 'Carta TCG', '2025-03-25', 90, 3000, 'url_pot.jpg'),
+(15, NULL, 1, 'Juego Mesa', '2025-05-28', 10, 80000, 'url_gloom.jpg');
+  
+  
+INSERT INTO tienda_producto (id_tienda, id_producto) 
+VALUES
+  (1, 1), 
+  (1, 2), 
+  (1, 9),
+  (2, 3), 
+  (2, 4), 
+  (3, 5),
+  (3, 6), 
+  (4, 7), 
+  (4, 8),
+  (5, 10), 
+  (5, 11), 
+  (6, 12),
+  (6, 13), 
+  (7, 14), 
+  (7, 15);
+ */
+ 
