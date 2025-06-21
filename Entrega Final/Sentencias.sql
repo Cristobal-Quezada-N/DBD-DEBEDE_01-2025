@@ -10,6 +10,8 @@ SET productos_carro = (
 )
 WHERE id_carrito = 1;
 
+SELECT * FROM carrito_producto;
+
 -- Consulta 2
 DELETE FROM carrito_producto
 WHERE id_carrito = 1 AND id_producto = 5;
@@ -17,6 +19,8 @@ WHERE id_carrito = 1 AND id_producto = 5;
 UPDATE carrito
 SET productos_carro = productos_carro - 1
 WHERE id_carrito = 1;
+
+SELECT * FROM carrito_producto;
 
 -- Consulta 3
 SELECT cp.id_carrito, p.id_producto, COALESCE(ct.nombre_carta, jdm.nombre_juegos_mesa) AS nombre_producto

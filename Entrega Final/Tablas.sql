@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS carta_tcg, juego_de_mesa, producto, valoracion, rol, tienda, usuario, carrito, carrito_usuario, medio_de_pago, boleta, compra, tienda_producto, boleta_producto, listadeseos, listadeseos_usuario, carrito_producto, lista_deseos_producto CASCADE;
+DROP TABLE IF EXISTS carta_tcg, juego_de_mesa, producto, valoracion, rol, tienda, usuario, carrito, carrito_usuario, medio_de_pago, boleta, compra, tienda_producto, boleta_producto, listadeseos, listadeseos_usuario, carrito_producto, listadeseos_producto CASCADE;
 
 -- Tabla Carta_TCG
 CREATE TABLE IF NOT EXISTS carta_tcg (
