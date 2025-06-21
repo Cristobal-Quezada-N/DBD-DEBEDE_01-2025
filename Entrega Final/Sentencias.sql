@@ -1,4 +1,4 @@
--- Consulta 1
+  -- Consulta 1
 INSERT INTO carrito_producto (id_carrito, id_producto)
 VALUES (1, 5);
 
@@ -10,7 +10,7 @@ SET productos_carro = (
 )
 WHERE id_carrito = 1;
 
-SELECT * FROM carrito_producto;
+SELECT * FROM carrito_producto WHERE id_carrito = 1;
 
 -- Consulta 2
 DELETE FROM carrito_producto
@@ -20,7 +20,7 @@ UPDATE carrito
 SET productos_carro = productos_carro - 1
 WHERE id_carrito = 1;
 
-SELECT * FROM carrito_producto;
+SELECT * FROM carrito_producto WHERE id_carrito = 1;
 
 -- Consulta 3
 SELECT cp.id_carrito, p.id_producto, COALESCE(ct.nombre_carta, jdm.nombre_juegos_mesa) AS nombre_producto
@@ -47,12 +47,12 @@ WHERE t.direccion_tienda = 'Avenida Calamari';
 
 -- Consulta 6
 SELECT id_producto, cantidad_vendidas
-FROM producto,
+FROM producto
 ORDER BY cantidad_vendidas DESC;
 
 -- Consulta 7
 SELECT lu.id_usuario, p.id_producto, COALESCE(ct.nombre_carta, jdm.nombre_juegos_mesa) AS nombre_producto
-FROM lista_deseos_producto ldp
+FROM listadeseos_producto ldp
 JOIN listadeseos ld ON ldp.id_lista_deseos = ld.id_lista_deseos
 JOIN listadeseos_usuario lu ON ld.id_lista_deseos = lu.id_lista_deseos
 JOIN producto p ON ldp.id_producto = p.id_producto
