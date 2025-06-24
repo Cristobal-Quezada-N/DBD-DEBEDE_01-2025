@@ -1,5 +1,3 @@
-# LEER ARCHIVO [LEEEME.TXT](https://github.com/Cristobal-Quezada-N/DBD-DEBEDE_01-2025/blob/main/docs/leeme.txt)
-
 # DBD DEBEDE Proyecto Final
 
 > Plataforma de e-commerce de TCG & Juegos de Mesa.
@@ -14,3 +12,10 @@
 - Luis Palma
 - Cristóbal Quezada
 - Nicolas Sarmiento
+
+## Entregas
+
+- [x] Informe.
+- [x] Modelo Entidad Relacion y Modelo Relacional.
+- [x] [Implementacion SQL](./docs/DatabaseManual.md).
+- [ ] Implementacion Plataforma Web.
