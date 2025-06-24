@@ -1,4 +1,4 @@
-# LEER ARCHIVO [LEEEME.TXT](https://github.com/Cristobal-Quezada-N/DBD-DEBEDE_01-2025/blob/main/leeme.txt)
+# LEER ARCHIVO [LEEEME.TXT](https://github.com/Cristobal-Quezada-N/DBD-DEBEDE_01-2025/blob/main/docs/leeme.txt)
 
 # DBD DEBEDE Proyecto Final
 
