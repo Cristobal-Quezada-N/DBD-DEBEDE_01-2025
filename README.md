@@ -8,8 +8,14 @@
 
 ## Grupo 5
 
-- Jordan Gonzalez
 - Zhi Lu
 - Luis Palma
 - Cristóbal Quezada
 - Nicolas Sarmiento
+
+## Entregas
+
+- [x] Informe.
+- [x] Modelo Entidad Relacion y Modelo Relacional.
+- [x] [Implementacion SQL](./docs/DatabaseManual.md).
+- [ ] Implementacion Plataforma Web.
