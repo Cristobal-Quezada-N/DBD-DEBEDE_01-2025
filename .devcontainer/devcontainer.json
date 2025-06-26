@@ -11,11 +11,24 @@
 
         // 5432: Base de Datos. PostgreSQL
         // 5050: Administrador de Base de Datos, PgAdmin
-        "forwardPorts": [5432, 5050],
+        "forwardPorts": [5432, 5050, 8080],
 
         // Mostrar Informacion del sistema
         "postCreateCommand": ".devcontainer/scripts/post-create.sh",
 
         // Usuario del Devcontainer.
-        "remoteUser": "vscode"
+        "remoteUser": "vscode",
+
+        // Configuracion para Editores
+        "customizations": {
+                "vscode": {
+                        "settings": {
+                                "java.compile.nullAnalysis.mode": "automatic"
+                        },
+                        "extensions": [
+                                "vscjava.vscode-java-pack",
+                                "vscjava.vscode-gradle"
+                        ]
+                }
+        }
 }

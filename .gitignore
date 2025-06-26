@@ -3,3 +3,6 @@
 .scripts/
 !.devcontainer/data/postgres/.gitkeep
 !.devcontainer/data/pgadmin/.gitkeep
+
+# Directorios a ignorar
+.vscode/
