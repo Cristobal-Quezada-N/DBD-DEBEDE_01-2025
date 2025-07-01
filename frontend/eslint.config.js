@@ -1,29 +1,34 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import { defineConfig, globalIgnores } from 'eslint/config'
+import js from '@eslint/js';
+import globals from 'globals';
+import pluginReact from 'eslint-plugin-react';
+import markdown from '@eslint/markdown';
+import css from '@eslint/css';
+import { defineConfig } from 'eslint/config';
+
 
 export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{js,jsx}'],
-    extends: [
-      js.configs.recommended,
-      reactHooks.configs['recommended-latest'],
-      reactRefresh.configs.vite,
-    ],
-    languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
-      parserOptions: {
-        ecmaVersion: 'latest',
-        ecmaFeatures: { jsx: true },
-        sourceType: 'module',
-      },
+    {
+        files: ['**/*.js', '**/*.jsx', '**/*.css'],
+        rules: {
+            'indent': ['warn', 4],
+            'quotes': ['warn', 'single'],
+            'jsx-quotes': ['warn', 'prefer-single'],
+            'no-unused-vars': ['warn', { varsIgnorePattern: '^[A-Z_]' }],
+            'no-trailing-spaces': ['error'],
+            'no-irregular-whitespace': ['error'],
+            'object-curly-spacing': ['warn', 'always'],
+            'no-multi-spaces': 'error',
+            'key-spacing': [
+                'warn',
+                { beforeColon: false, afterColon: true}
+            ],
+            'no-multiple-empty-lines': ['warn', { max: 1 }],
+            'space-before-function-paren': ['warn', 'never'],
+        }
     },
-    rules: {
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
-    },
-  },
-])
+    { files: ['**/*.{js,mjs,cjs,jsx}'], plugins: { js }, extends: ['js/recommended'] },
+    { files: ['**/*.{js,mjs,cjs,jsx}'], languageOptions: { globals: globals.browser } },
+    pluginReact.configs.flat.recommended,
+    { files: ['**/*.md'], plugins: { markdown }, language: 'markdown/gfm', extends: ['markdown/recommended'] },
+    { files: ['**/*.css'], plugins: { css }, language: 'css/css', extends: ['css/recommended'] },
+]);
