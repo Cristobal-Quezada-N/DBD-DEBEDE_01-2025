@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Navbar, Nav, Container, NavDropdown, Offcanvas } from 'react-bootstrap'
 
+import Buscador from './Buscador'
+
 function NavBar() {
     return (
         <Navbar variant='dark' expand='lg' className='bg-dark'>
@@ -13,9 +15,7 @@ function NavBar() {
                 </NavDropdown>
             </Nav>
 
-            <Nav className='d-none d-md-flex mx-auto text-white'>
-                <p className='my-auto'>Buscador</p>
-            </Nav>
+            <Buscador className='d-none d-md-flex mx-auto w-50 px-5'/>
 
             <Nav className='ms-auto align-items-center flex-row'>
                 <Nav.Link as={Link} to='/carrito' className='px-3'>
@@ -32,9 +32,7 @@ function NavBar() {
                         <Offcanvas.Title id='offcanvasNavbarLabel'>Tienda</Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
-                        <div className='d-lg-none'>
-                            <p>Buscador</p>
-                        </div>
+                        <Buscador className='d-lg-none'/>
 
                         <Nav className='d-lg-none'>
                             <NavDropdown title='Categorías' id='dropdown-categorias'>
