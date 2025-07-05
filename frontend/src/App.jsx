@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 
@@ -13,7 +13,12 @@ import CuentaPage from './pages/CuentaPage'
 import ProductPage from './pages/ProductPage'
 
 function App() {
-
+    useEffect(() => {
+        fetch('http://localhost:8080/api/test')
+            .then(res => res.text())
+            .then(data => console.log(data))
+            .catch(err => console.error('Error:', err));
+    }, []);
     return (
         <>
             <Container className='bg-dark text-white d-flex flex-column min-vh-100 m-0 p-0' fluid>
