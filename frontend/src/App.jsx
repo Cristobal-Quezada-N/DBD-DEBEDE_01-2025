@@ -9,6 +9,7 @@ import CartasPage from './pages/CartasPage'
 import MesaPage from './pages/MesaPage'
 import RegistroPage from './pages/RegistroPage'
 import LoginPage from './pages/LoginPage'
+import CuentaPage from './pages/CuentaPage'
 import ProductPage from './pages/ProductPage'
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
                             <Route path='/mesa' element={<MesaPage/>} />
                             <Route path='/login' element={<LoginPage/>} />
                             <Route path='/registro' element={<RegistroPage/>} />
+                            <Route path='/cuenta' element={<CuentaPage/>} />
                             <Route path='/product' element={<ProductPage/>} />
                         </Routes>
                     </div>

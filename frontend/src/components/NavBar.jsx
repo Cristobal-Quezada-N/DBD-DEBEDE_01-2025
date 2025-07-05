@@ -42,6 +42,7 @@ function NavBar() {
                         </Nav>
 
                         <div className='d-lg-none'>
+                            <Nav.Link as={Link} to='/cuenta'>Cuenta</Nav.Link>
                             <Nav.Link as={Link} to='/login'>Login</Nav.Link>
                             <Nav.Link as={Link} to='/registro'>Registro</Nav.Link>
                         </div>
@@ -49,6 +50,7 @@ function NavBar() {
                 </Navbar.Offcanvas>
 
                 <div className='d-none d-lg-flex'>
+                    <Nav.Link as={Link} to='/cuenta'>Cuenta</Nav.Link>
                     <Nav.Link as={Link} to='/login'>Login</Nav.Link>
                     <Nav.Link as={Link} to='/registro'>Registro</Nav.Link>
                 </div>
