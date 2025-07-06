@@ -1,0 +1,12 @@
+.product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+        overflow-y: auto;
+        height: calc(100vh - 15rem);
+        grid-auto-flow: row;
+        place-items: center;
+        align-items: start;
+}
+
