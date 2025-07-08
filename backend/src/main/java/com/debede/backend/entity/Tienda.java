@@ -1,7 +1,5 @@
 package com.debede.backend.entity;
 
-
-
 import jakarta.persistence.*;
 
 @Entity
@@ -24,6 +22,9 @@ public class Tienda {
         this.url_producto_imagen = url_prodducto_imagen;
     }
 
+    public Tienda() {
+
+    }
 
     public Long getId_tienda() {
         return id_tienda;
