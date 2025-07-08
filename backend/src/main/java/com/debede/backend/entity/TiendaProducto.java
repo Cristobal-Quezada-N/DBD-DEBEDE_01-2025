@@ -43,7 +43,7 @@ public class TiendaProducto {
         this.producto = producto;
         this.id = new TiendaProductoId(
             tienda.getId_tienda(),
-            producto.getIdProducto()
+            producto.getId_producto()
         );
     }
 
