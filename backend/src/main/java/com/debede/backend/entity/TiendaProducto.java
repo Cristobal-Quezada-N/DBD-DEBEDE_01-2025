@@ -9,9 +9,20 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapsId;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "tienda_producto")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class TiendaProducto {
     @EmbeddedId
     private TiendaProductoId id;
@@ -26,9 +37,6 @@ public class TiendaProducto {
     @JoinColumn(name = "id_producto")
     private Producto producto;
 
-    // Constructor JPA
-    public TiendaProducto() {}
-
     // Constructor
     public TiendaProducto(Tienda tienda, Producto producto) {
         this.tienda = tienda;
@@ -39,62 +47,16 @@ public class TiendaProducto {
         );
     }
 
-    // Getters y Setters
-    public Tienda getTienda() {
-           return tienda;
-    }
-        
-    public void setTienda(Tienda tienda) {
-        this.tienda  = tienda;
-    }
-        
-    public Producto getProducto() {
-        return producto;
-    }
-        
-    public void setProducto(Producto producto) {
-        this.producto = producto;
-    }
-
-    // Funcion para debug
-    @Override
-    public String toString() {
-        return "Tienda_Producto{" +
-                "id_tienda=" + tienda.getId_tienda() +
-                ", id_producto=" + producto.getIdProducto() +
-                '}';
-    }
-
     // Abstraccion de la llave compuesta
     @Embeddable
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    @EqualsAndHashCode
+    @ToString
     public static class TiendaProductoId implements Serializable{
         private Long id_tienda;
         private Long id_producto;
-
-        // Constructor JPA
-        public TiendaProductoId() {}
-
-        // Constructor
-        public TiendaProductoId(Long id_tienda, Long id_producto) {
-            this.id_tienda = id_tienda;
-            this.id_producto = id_producto;
-        }
-
-        // Getters y Setters
-        public Long getIdTienda() {
-               return id_tienda;
-        }
-            
-        public void setIdTienda(Long id_tienda) {
-            this.id_tienda = id_tienda;
-        }
-            
-        public Long getIdProducto() {
-            return id_producto;
-        }
-            
-        public void setIdProducto(Long id_producto) {
-            this.id_producto = id_producto;
-        }
     }
 }
