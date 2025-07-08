@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "producto")
+@Table(name = "Producto")
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,6 +17,21 @@ public class Producto {
     private Long cantidad_vendidas;
     private Integer precio;
     private String url_imagen;
+
+    public Producto(Long id_producto, Long id_carta, Long id_juego_de_mesa, String tipo_producto, LocalDate fecha_subida, Long cantidad_vendidas, Integer precio, String url_imagen) {
+        this.id_producto = id_producto;
+        this.id_carta = id_carta;
+        this.id_juego_de_mesa = id_juego_de_mesa;
+        this.tipo_producto = tipo_producto;
+        this.fecha_subida = fecha_subida;
+        this.cantidad_vendidas = cantidad_vendidas;
+        this.precio = precio;
+        this.url_imagen = url_imagen;
+    }
+
+    public Producto() {
+
+    }
 
     public Long getIdProducto() {
         return id_producto;
@@ -74,5 +89,19 @@ public class Producto {
 
     public void setURLImagen(String url_imagen) {
         this.url_imagen = url_imagen;
+    }
+
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "id_producto=" + id_producto +
+                ", id_carta=" + id_carta +
+                ", id_juego_de_mesa=" + id_juego_de_mesa +
+                ", tipo_producto='" + tipo_producto + '\'' +
+                ", fecha_subida=" + fecha_subida +
+                ", cantidad_vendidas=" + cantidad_vendidas +
+                ", precio=" + precio +
+                ", url_imagen='" + url_imagen + '\'' +
+                '}';
     }
 }
