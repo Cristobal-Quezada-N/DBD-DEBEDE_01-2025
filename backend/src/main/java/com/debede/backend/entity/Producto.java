@@ -2,7 +2,17 @@ package com.debede.backend.entity;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "producto")
 public class Producto {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_producto;
     private Long id_carta;
     private Long id_juego_de_mesa;
@@ -12,6 +22,9 @@ public class Producto {
     private Integer precio;
     private String url_imagen;
 
+    // Constructor vacio para JPA
+    public Producto() {}
+    // Constructor para test o debug
     public Producto(Long id_producto, Long id_carta, Long id_juego_de_mesa, String tipo_producto, LocalDate fecha_subida, Long cantidad_vendidas, Integer precio, String url_imagen) {
         this.id_producto = id_producto;
         this.id_carta = id_carta;
@@ -22,7 +35,8 @@ public class Producto {
         this.precio = precio;
         this.url_imagen = url_imagen;
     }
-
+    
+    // Getters y Setters
     public Long getIdProducto() {
         return id_producto;
     }
@@ -81,6 +95,7 @@ public class Producto {
         this.url_imagen = url_imagen;
     }
 
+    // Funcion util para debug
     @Override
     public String toString() {
         return "Producto{" +
