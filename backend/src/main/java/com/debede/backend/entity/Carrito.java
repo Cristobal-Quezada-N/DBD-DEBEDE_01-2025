@@ -8,9 +8,9 @@ public class Carrito {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_carrito;
-    private int productos_carro;
+    private Integer productos_carro;
 
-    public Carrito(Long id_carrito, int productos_carro) {
+    public Carrito(Long id_carrito, Integer productos_carro) {
         this.id_carrito = id_carrito;
         this.productos_carro = productos_carro;
     }
@@ -31,7 +31,7 @@ public class Carrito {
         return productos_carro;
     }
 
-    public void setProductos_carro(int productos_carro) {
+    public void setProductos_carro(Integer productos_carro) {
         this.productos_carro = productos_carro;
     }
 
