@@ -2,13 +2,7 @@ package com.debede.backend.entity;
 
 import java.time.LocalDate;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "Usuario")
 public class Usuario {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_usuario;
     private Long id_rol;
     private Long id_valoracion;
@@ -29,10 +23,6 @@ public class Usuario {
         this.apellido = apellido;
         this.nombre_usuario = nombre_usuario;
         this.direccion_usuario = direccion_usuario;
-    }
-
-    public Usuario() {
-
     }
 
     public Long getId_usuario() {

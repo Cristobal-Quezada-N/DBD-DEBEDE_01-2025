@@ -1,17 +1,6 @@
 package com.debede.backend.entity;
 
-import java.time.LocalDate;
-
-import jakarta.persistence.*;
-
-
-@Entity
-@Table(name = "ListaDeseos_Producto")
-
 public class ListaDeseos_Producto {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_lista_deseos;
     private Long id_producto;
 

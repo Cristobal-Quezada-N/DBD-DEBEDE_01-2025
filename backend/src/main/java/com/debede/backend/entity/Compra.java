@@ -2,13 +2,7 @@ package com.debede.backend.entity;
 
 import java.time.LocalDate;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "Compra")
 public class Compra {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_compra;
     private Long id_carrito;
     private Long id_boleta;
@@ -25,10 +19,6 @@ public class Compra {
         this.cantidad_comprado = cantidad_comprado;
         this.fecha_compra = fecha_compra;
         this.fecha_emision_boleta = fecha_emision_boleta;
-    }
-
-    public Compra() {
-
     }
 
     public Long getId_compra() {

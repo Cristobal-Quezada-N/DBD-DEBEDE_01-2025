@@ -1,22 +1,15 @@
 package com.debede.backend.entity;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "Boleta")
 public class Boleta {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_boleta;
     private String direccion_boleta;
-    private Integer nombre_boleta;
+    private Integer valor_boleta;
     private Long numero_boleta;
 
-
-    public Boleta(Long id_boleta, String direccion_boleta, Integer nombre_boleta, Long numero_boleta) {
+    public Boleta(Long id_boleta, String direccion_boleta, Integer valor_boleta, Long numero_boleta) {
         this.id_boleta = id_boleta;
         this.direccion_boleta = direccion_boleta;
-        this.nombre_boleta = nombre_boleta;
+        this.valor_boleta = valor_boleta;
         this.numero_boleta = numero_boleta;
     }
 
@@ -36,12 +29,12 @@ public class Boleta {
         this.direccion_boleta = direccion_boleta;
     }
 
-    public Integer getNombre_boleta() {
-        return nombre_boleta;
+    public Integer getValor_boleta() {
+        return valor_boleta;
     }
 
-    public void setNombre_boleta(Integer nombre_boleta) {
-        this.nombre_boleta = nombre_boleta;
+    public void setValor_boleta(Integer valor_boleta) {
+        this.valor_boleta = valor_boleta;
     }
 
     public Long getNumero_boleta() {
@@ -57,9 +50,8 @@ public class Boleta {
         return "Boleta{" +
                 "id_boleta=" + id_boleta +
                 ", direccion_boleta='" + direccion_boleta + '\'' +
-                ", nombre_boleta=" + nombre_boleta +
+                ", valor_boleta=" + valor_boleta +
                 ", numero_boleta=" + numero_boleta +
                 '}';
     }
-
 }

@@ -2,15 +2,7 @@ package com.debede.backend.entity;
 
 import java.time.LocalDate;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "Valoracion_Producto")
 public class Valoracion_Producto {
-
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_valoracion;
     private Long id_producto;
     private String comentario_valoracion;
@@ -24,7 +16,6 @@ public class Valoracion_Producto {
         this.fecha_valoracion = fecha_valoracion;
         this.puntuacion = puntuacion;
     }
-
 
     public Long getId_valoracion() {
         return id_valoracion;

@@ -1,13 +1,6 @@
 package com.debede.backend.entity;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "Tienda")
 public class Tienda {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_tienda;
     private Long id_rol;
     private String nombre_tienda;
@@ -20,10 +13,6 @@ public class Tienda {
         this.nombre_tienda = nombre_tienda;
         this.direccion_tienda = direccion_tienda;
         this.url_producto_imagen = url_prodducto_imagen;
-    }
-
-    public Tienda() {
-
     }
 
     public Long getId_tienda() {

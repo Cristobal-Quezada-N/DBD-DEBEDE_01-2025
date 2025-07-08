@@ -1,22 +1,12 @@
 package com.debede.backend.entity;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "Boleta_Producto")
 public class Boleta_Producto {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_boleta;
     private Long id_producto;
 
     public Boleta_Producto(Long id_boleta, Long id_producto) {
         this.id_boleta = id_boleta;
         this.id_producto = id_producto;
-    }
-
-    public Boleta_Producto() {
-
     }
 
     public Long getId_boleta() {

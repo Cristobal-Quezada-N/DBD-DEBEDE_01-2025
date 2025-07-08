@@ -1,12 +1,6 @@
 package com.debede.backend.entity;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "Rol")
 public class Rol {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_rol;
     private String tipo_rol;
     private Short nivel_permiso;
@@ -15,10 +9,6 @@ public class Rol {
         this.id_rol = id_rol;
         this.tipo_rol = tipo_rol;
         this.nivel_permiso = nivel_permiso;
-    }
-
-    public Rol() {
-
     }
 
     public Long getId_rol() {

@@ -1,26 +1,16 @@
 package com.debede.backend.entity;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "Medio_De_Pago")
 public class Medio_De_Pago {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_medio;
     private Long id_carrito;
     private String nombre_medio;
-    private String url_descripcion;
+    private String url_medio;
 
-    public Medio_De_Pago(Long id_medio, Long id_carrito, String nombre_medio, String url_descripcion) {
+    public Medio_De_Pago(Long id_medio, Long id_carrito, String nombre_medio, String url_medio) {
         this.id_medio = id_medio;
         this.id_carrito = id_carrito;
         this.nombre_medio = nombre_medio;
-        this.url_descripcion = url_descripcion;
-    }
-
-    public Medio_De_Pago() {
-
+        this.url_medio = url_medio;
     }
 
     public Long getId_medio() {
@@ -47,12 +37,12 @@ public class Medio_De_Pago {
         this.nombre_medio = nombre_medio;
     }
 
-    public String getUrl_descripcion() {
-        return url_descripcion;
+    public String getUrl_medio() {
+        return url_medio;
     }
 
-    public void setUrl_descripcion(String url_descripcion) {
-        this.url_descripcion = url_descripcion;
+    public void setUrl_medio(String url_medio) {
+        this.url_medio = url_medio;
     }
 
     @Override
@@ -61,7 +51,7 @@ public class Medio_De_Pago {
                 "id_medio=" + id_medio +
                 ", id_carrito=" + id_carrito +
                 ", nombre_medio='" + nombre_medio + '\'' +
-                ", url_descripcion='" + url_descripcion + '\'' +
+                ", url_medio='" + url_medio + '\'' +
                 '}';
     }
 }

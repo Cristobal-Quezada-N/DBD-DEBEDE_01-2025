@@ -1,22 +1,12 @@
 package com.debede.backend.entity;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "Carrito_Producto")
 public class Carrito_Producto {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_carrito;
     private Long id_producto;
 
     public Carrito_Producto(Long id_carrito, Long id_producto) {
         this.id_carrito = id_carrito;
         this.id_producto = id_producto;
-    }
-
-    public Carrito_Producto() {
-
     }
 
     public Long getId_carrito() {
