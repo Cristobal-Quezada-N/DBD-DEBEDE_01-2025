@@ -116,3 +116,54 @@ public class Tabla {
 - `@NoArgsConstructor`: Aplicar el constructor vacio para JPA.
 - `@AllArgsConstructor`: Aplica constructor comun. Aplica a todas las variables de la clase.
 - `@toString`: Aplica el metodo para impresion por pantalla `toString`. Para otros metodos, se realiza de forma analoga.
+
+### Entidades Intermedias
+
+Se debe crear una abstraccion para la llave compuesta. Ej:
+
+```java
+@Entity
+@Table(name = "nombre_tabla")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+public class Tabla {
+    @EmbeddedId
+    private TablaId id; // LLave Compuesta
+
+    @ManyToOne
+    @MapsId("id_tabla1")
+    @JoinColumn(name = "id_tabla1")
+    private Tabla tabla1;
+
+    @ManyToOne
+    @MapsId("id_tabla2")
+    @JoinColumn(name = "id_tabla2")
+    private Tabla tabla2;
+
+    // Constructor
+    public Tabla(Tabla tabla1, Tabla tabla2) {
+        this.tabla1 = tabla1;
+        this.tabla2 = tabla2;
+        this.id = new TablaId(
+            tabla1.getId_tabla1(),
+            tabla2.getId_tabla2()
+        );
+    }
+
+    // Abstraccion de la llave compuesta
+    @Embeddable
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    @EqualsAndHashCode
+    @ToString
+    public static class TablaId implements Serializable{
+        private Long id_tabla1;
+        private Long id_tabla2;
+    }
+}
+```
