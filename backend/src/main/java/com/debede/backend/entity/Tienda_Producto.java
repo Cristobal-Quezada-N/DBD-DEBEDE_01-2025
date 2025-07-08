@@ -3,7 +3,7 @@ package com.debede.backend.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "tienda_producto")
+@Table(name = "Tienda_Producto")
 public class Tienda_Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

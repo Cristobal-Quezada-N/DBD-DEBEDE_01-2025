@@ -3,7 +3,7 @@ package com.debede.backend.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "tienda")
+@Table(name = "Tienda")
 public class Tienda {
 
     @Id

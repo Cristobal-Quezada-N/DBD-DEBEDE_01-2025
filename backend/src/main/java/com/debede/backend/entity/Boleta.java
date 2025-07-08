@@ -10,17 +10,14 @@ public class Boleta {
     private Long id_boleta;
     private String direccion_boleta;
     private Integer nombre_boleta;
-    private String numero_boleta;
+    private Long numero_boleta;
 
-    public Boleta(Long id_boleta, String direccion_boleta, Integer nombre_boleta, String numero_boleta) {
+
+    public Boleta(Long id_boleta, String direccion_boleta, Integer nombre_boleta, Long numero_boleta) {
         this.id_boleta = id_boleta;
         this.direccion_boleta = direccion_boleta;
         this.nombre_boleta = nombre_boleta;
         this.numero_boleta = numero_boleta;
-    }
-
-    public Boleta() {
-
     }
 
     public Long getId_boleta() {
@@ -47,21 +44,22 @@ public class Boleta {
         this.nombre_boleta = nombre_boleta;
     }
 
-    public String getNumero_boleta() {
+    public Long getNumero_boleta() {
         return numero_boleta;
     }
 
-    public void setNumero_boleta(String numero_boleta) {
+    public void setNumero_boleta(Long numero_boleta) {
         this.numero_boleta = numero_boleta;
     }
 
     @Override
     public String toString() {
         return "Boleta{" +
-                "nombre_boleta=" + nombre_boleta +
-                ", id_boleta=" + id_boleta +
+                "id_boleta=" + id_boleta +
                 ", direccion_boleta='" + direccion_boleta + '\'' +
-                ", numero_boleta='" + numero_boleta + '\'' +
+                ", nombre_boleta=" + nombre_boleta +
+                ", numero_boleta=" + numero_boleta +
                 '}';
     }
+
 }
