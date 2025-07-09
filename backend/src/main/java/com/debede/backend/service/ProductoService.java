@@ -1,13 +1,13 @@
 package com.debede.backend.service;
 
-import java.util.List;
-import java.util.Optional;
+import com.debede.backend.entity.Producto;
+import com.debede.backend.repository.ProductoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.debede.backend.entity.Producto;
-import com.debede.backend.repository.ProductoRepository;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductoService {
@@ -29,5 +29,4 @@ public class ProductoService {
     public void delete(Long id) {
         productoRepository.deleteById(id);
     }
-
 }
