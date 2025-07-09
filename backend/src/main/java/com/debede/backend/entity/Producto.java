@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,8 +26,12 @@ public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_producto;
-    private Long id_carta;
-    private Long id_juego_de_mesa;
+    @ManyToOne
+    @JoinColumn(name = "id_carta", nullable = true)
+    private Carta_TCG carta;
+    @ManyToOne
+    @JoinColumn(name = "id_juego_de_mesa", nullable = true)
+    private Juego_De_Mesa juegoDeMesa;
     private String tipo_producto;
     private LocalDate fecha_subida;
     private Long cantidad_vendidas;
