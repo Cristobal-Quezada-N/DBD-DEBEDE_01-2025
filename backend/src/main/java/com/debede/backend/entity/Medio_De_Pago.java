@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,7 +24,9 @@ public class Medio_De_Pago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_medio;
-    private Long id_carrito;
+    @ManyToOne
+    @JoinColumn(name = "id_carrito")
+    private Carrito carrito;
     private String nombre_medio;
     private String url_medio;
 }
