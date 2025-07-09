@@ -23,7 +23,7 @@ public class Juego_De_Mesa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_juego_mesa;
     private String tipo_juego_mesa;
-    private Integer stock_juego_mesa;
-    private String descripcion_juego_mesa;
-    private String nombre_juego_mesa;
+    private Integer stock_juegos_mesa;
+    private String nombre_juegos_mesa;
+    private String descripcion_juegos_mesa;
 }
