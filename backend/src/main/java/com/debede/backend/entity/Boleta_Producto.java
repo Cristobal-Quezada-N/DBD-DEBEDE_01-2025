@@ -1,35 +1,60 @@
 package com.debede.backend.entity;
 
+import java.io.Serializable;
+
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.MapsId;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Entity
+@Table(name = "boleta_producto")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class Boleta_Producto {
-    private Long id_boleta;
-    private Long id_producto;
+    @EmbeddedId
+    private Boleta_ProductoId id;
 
-    public Boleta_Producto(Long id_boleta, Long id_producto) {
-        this.id_boleta = id_boleta;
-        this.id_producto = id_producto;
+    @ManyToOne
+    @MapsId("id_boleta")
+    @JoinColumn(name = "id_boleta")
+    private Boleta boleta;
+
+    @ManyToOne
+    @MapsId("id_producto")
+    @JoinColumn(name = "id_producto")
+    private Producto producto;
+
+    public Boleta_Producto(Boleta boleta, Producto producto) {
+        this.boleta = boleta;
+        this.producto = producto;
+        this.id = new Boleta_ProductoId(
+                boleta.getId_boleta(),
+                producto.getId_producto()
+        );
     }
 
-    public Long getId_boleta() {
-        return id_boleta;
-    }
-
-    public void setId_boleta(Long id_boleta) {
-        this.id_boleta = id_boleta;
-    }
-
-    public Long getId_producto() {
-        return id_producto;
-    }
-
-    public void setId_producto(Long id_producto) {
-        this.id_producto = id_producto;
-    }
-
-    @Override
-    public String toString() {
-        return "Boleta_Producto{" +
-                "id_boleta=" + id_boleta +
-                ", id_producto=" + id_producto +
-                '}';
+    @Embeddable
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    @EqualsAndHashCode
+    @ToString
+    public static class Boleta_ProductoId implements Serializable{
+        private Long id_boleta;
+        private Long id_producto;
     }
 }

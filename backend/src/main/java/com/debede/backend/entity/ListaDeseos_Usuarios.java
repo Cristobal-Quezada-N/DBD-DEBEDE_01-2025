@@ -1,35 +1,60 @@
 package com.debede.backend.entity;
 
+import java.io.Serializable;
+
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.MapsId;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Entity
+@Table(name = "listaDeseos_usuario")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class ListaDeseos_Usuarios {
-    private Long id_usuario;
-    private Long id_lista_deseos;
+    @EmbeddedId
+    private ListaDeseos_UsuariosId id;
 
-    public ListaDeseos_Usuarios(Long id_usuario, Long id_lista_deseos) {
-        this.id_usuario = id_usuario;
-        this.id_lista_deseos = id_lista_deseos;
+    @ManyToOne
+    @MapsId("id_lista_deseos")
+    @JoinColumn(name = "id_lista_deseos")
+    private ListaDeseos listaDeseos;
+
+    @ManyToOne
+    @MapsId("id_usuario")
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
+
+    public ListaDeseos_Usuarios(ListaDeseos listaDeseos, Usuario usuario) {
+        this.listaDeseos = listaDeseos;
+        this.usuario = usuario;
+        this.id = new ListaDeseos_UsuariosId(
+                listaDeseos.getId_lista_deseos(),
+                usuario.getId_usuario()
+        );
     }
 
-    public Long getId_usuario() {
-        return id_usuario;
-    }
-
-    public void setId_usuario(Long id_usuario) {
-        this.id_usuario = id_usuario;
-    }
-
-    public Long getId_lista_deseos() {
-        return id_lista_deseos;
-    }
-
-    public void setId_lista_deseos(Long id_lista_deseos) {
-        this.id_lista_deseos = id_lista_deseos;
-    }
-
-    @Override
-    public String toString() {
-        return "ListaDeseos_Usuarios{" +
-                "id_usuario=" + id_usuario +
-                ", id_lista_deseos=" + id_lista_deseos +
-                '}';
+    @Embeddable
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    @EqualsAndHashCode
+    @ToString
+    public static class ListaDeseos_UsuariosId implements Serializable{
+        private Long id_lista_deseos;
+        private Long id_usuario;
     }
 }

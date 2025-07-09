@@ -1,35 +1,60 @@
 package com.debede.backend.entity;
 
+import java.io.Serializable;
+
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.MapsId;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Entity
+@Table(name = "carrito_usuario")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class Carrito_Usuario {
-    private Long id_usuario;
-    private Long id_carrito;
+    @EmbeddedId
+    private Carrito_UsuarioId id;
 
-    public Carrito_Usuario(Long id_usuario, Long id_carrito) {
-        this.id_usuario = id_usuario;
-        this.id_carrito = id_carrito;
+    @ManyToOne
+    @MapsId("id_carrito")
+    @JoinColumn(name = "id_carrito")
+    private Carrito carrito;
+
+    @ManyToOne
+    @MapsId("id_usuario")
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
+
+    public Carrito_Usuario(Carrito carrito, Usuario usuario) {
+        this.carrito = carrito;
+        this.usuario = usuario;
+        this.id = new Carrito_UsuarioId(
+                carrito.getId_carrito(),
+                usuario.getId_usuario()
+        );
     }
 
-    public Long getId_usuario() {
-        return id_usuario;
-    }
-
-    public void setId_usuario(Long id_usuario) {
-        this.id_usuario = id_usuario;
-    }
-
-    public Long getId_carrito() {
-        return id_carrito;
-    }
-
-    public void setId_carrito(Long id_carrito) {
-        this.id_carrito = id_carrito;
-    }
-
-    @Override
-    public String toString() {
-        return "Carrito_Usuario{" +
-                "id_usuario=" + id_usuario +
-                ", id_carrito=" + id_carrito +
-                '}';
+    @Embeddable
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    @EqualsAndHashCode
+    @ToString
+    public static class Carrito_UsuarioId implements Serializable{
+        private Long id_carrito;
+        private Long id_usuario;
     }
 }
