@@ -20,7 +20,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Valoracion_Producto {
+public class Valoracion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_valoracion;
