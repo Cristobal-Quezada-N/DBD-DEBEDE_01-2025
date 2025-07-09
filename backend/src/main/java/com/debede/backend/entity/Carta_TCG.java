@@ -1,5 +1,7 @@
 package com.debede.backend.entity;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -27,6 +29,6 @@ public class Carta_TCG {
     private String descripcion_carta;
     private String rareza_carta;
     private String estado_carta;
-    private Short ano_carta;
+    private LocalDate año_carta;
     private Integer stock_cartas;
 }
