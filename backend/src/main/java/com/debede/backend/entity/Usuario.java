@@ -2,6 +2,10 @@ package com.debede.backend.entity;
 
 import java.time.LocalDate;
 
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -35,6 +39,8 @@ public class Usuario {
     private String nombre_usuario;
     private String apellido;
     private String email;
+    @Column(name = "contraseña", length = 64)
+    @JdbcTypeCode(SqlTypes.CHAR)
     private String contraseña;
     private String direccion_usuario;
     private LocalDate fecha_registro;
