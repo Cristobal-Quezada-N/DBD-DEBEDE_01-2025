@@ -31,3 +31,7 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+bootRun {
+	environment 'spring.output.ansi.console-available', true
+}
