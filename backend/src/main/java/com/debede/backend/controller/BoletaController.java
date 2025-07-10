@@ -3,6 +3,8 @@ package com.debede.backend.controller;
 import java.util.List;
 import java.util.Optional;
 
+import com.debede.backend.entity.Boleta;
+import com.debede.backend.service.BoletaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,38 +15,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.debede.backend.entity.Producto;
-import com.debede.backend.service.ProductoService;
-
 @RestController
-@RequestMapping("/api/productos")
-public class ProductoController {
+@RequestMapping("/api/boleta")
+public class BoletaController {
     @Autowired
-    private ProductoService productoService;
+    private BoletaService boletaService;
 
     @GetMapping
-    public List<Producto> getAll() {
-        return productoService.getAll();
+    public List<Boleta> getAll() {
+        return boletaService.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Producto> getById(@PathVariable Long id) {
-        return productoService.getById(id);
+    public Optional<Boleta> getById(@PathVariable Long id) {
+        return boletaService.getById(id);
     }
 
     @PostMapping
-    public Producto create(@RequestBody Producto producto) {
-        return productoService.save(producto);
+    public Boleta create(@RequestBody Boleta boleta) {
+        return boletaService.save(boleta);
     }
 
     @PutMapping("/{id}")
-    public Producto update(@PathVariable Long id, @RequestBody Producto producto) {
-        producto.setId_producto(id);;
-        return productoService.save(producto);
+    public Boleta update(@PathVariable Long id, @RequestBody Boleta boleta) {
+        boleta.setId_boleta(id);
+        return boletaService.save(boleta);
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
-        productoService.delete(id);
+        boletaService.delete(id);
     }
 }

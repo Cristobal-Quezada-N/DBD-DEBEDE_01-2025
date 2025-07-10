@@ -3,6 +3,8 @@ package com.debede.backend.controller;
 import java.util.List;
 import java.util.Optional;
 
+import com.debede.backend.entity.ListaDeseos;
+import com.debede.backend.service.ListaDeseosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,38 +15,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.debede.backend.entity.Producto;
-import com.debede.backend.service.ProductoService;
-
 @RestController
-@RequestMapping("/api/productos")
-public class ProductoController {
+@RequestMapping("/api/listaDeseos")
+public class ListaDeseosController {
     @Autowired
-    private ProductoService productoService;
+    private ListaDeseosService listaDeseosService;
 
     @GetMapping
-    public List<Producto> getAll() {
-        return productoService.getAll();
+    public List<ListaDeseos> getAll() {
+        return listaDeseosService.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Producto> getById(@PathVariable Long id) {
-        return productoService.getById(id);
+    public Optional<ListaDeseos> getById(@PathVariable Long id) {
+        return listaDeseosService.getById(id);
     }
 
     @PostMapping
-    public Producto create(@RequestBody Producto producto) {
-        return productoService.save(producto);
+    public ListaDeseos create(@RequestBody ListaDeseos listaDeseos) {
+        return listaDeseosService.save(listaDeseos);
     }
 
     @PutMapping("/{id}")
-    public Producto update(@PathVariable Long id, @RequestBody Producto producto) {
-        producto.setId_producto(id);;
-        return productoService.save(producto);
+    public ListaDeseos update(@PathVariable Long id, @RequestBody ListaDeseos listaDeseos) {
+        listaDeseos.setId_lista_deseos(id);
+        return listaDeseosService.save(listaDeseos);
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
-        productoService.delete(id);
+        listaDeseosService.delete(id);
     }
 }
