@@ -1,6 +1,7 @@
 package com.debede.backend.service;
 
 import com.debede.backend.entity.Boleta_Producto;
+import com.debede.backend.entity.Boleta_Producto.Boleta_ProductoId;
 import com.debede.backend.repository.Boleta_ProductoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class Boleta_ProductoService {
         return boletaRepository.findAll();
     }
 
-    public Optional<Boleta_Producto> getById(Long id){
+    public Optional<Boleta_Producto> getById(Boleta_ProductoId id){
         return boletaRepository.findById(id);
     }
 
@@ -26,7 +27,7 @@ public class Boleta_ProductoService {
         return boletaRepository.save(boleta_producto);
     }
 
-    public void delete(Long id){
+    public void delete(Boleta_ProductoId id){
         boletaRepository.deleteById(id);
     }
 }
