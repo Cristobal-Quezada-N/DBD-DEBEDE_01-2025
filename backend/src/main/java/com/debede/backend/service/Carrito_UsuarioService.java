@@ -18,7 +18,7 @@ public class Carrito_UsuarioService {
         return carrito_UsuarioRepository.findAll();
     }
 
-    public Optional<Carrito_Usuario> getById(Long id){
+    public Optional<Carrito_Usuario> getById(Integer id){
         return carrito_UsuarioRepository.findById(id);
     }
 
@@ -26,7 +26,7 @@ public class Carrito_UsuarioService {
         return carrito_UsuarioRepository.save(carrito_Usuario);
     }
 
-    public void delete(Long id){
+    public void delete(Integer id){
         carrito_UsuarioRepository.deleteById(id);
     }
 }
