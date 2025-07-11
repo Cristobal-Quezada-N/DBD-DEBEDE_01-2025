@@ -27,7 +27,7 @@ public class CarritoController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Carrito> getById(@PathVariable Long id) {
+    public Optional<Carrito> getById(@PathVariable Integer id) {
         return carritoService.getById(id);
     }
 
@@ -37,13 +37,13 @@ public class CarritoController {
     }
 
     @PutMapping("/{id}")
-    public Carrito update(@PathVariable Long id, @RequestBody Carrito carrito) {
+    public Carrito update(@PathVariable Integer id, @RequestBody Carrito carrito) {
         carrito.setId_carrito(id);
         return carritoService.save(carrito);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable Integer id) {
         carritoService.delete(id);
     }
 }

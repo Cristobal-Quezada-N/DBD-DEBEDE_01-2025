@@ -21,6 +21,6 @@ import lombok.ToString;
 public class Carrito {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_carrito;
+    private Integer id_carrito;
     private Integer productos_carro;
 }
