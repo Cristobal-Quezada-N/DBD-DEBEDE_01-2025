@@ -27,7 +27,7 @@ public class CompraController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Compra> getById(@PathVariable Long id) {
+    public Optional<Compra> getById(@PathVariable Integer id) {
         return compraService.getById(id);
     }
 
@@ -37,13 +37,13 @@ public class CompraController {
     }
 
     @PutMapping("/{id}")
-    public Compra update(@PathVariable Long id, @RequestBody Compra compra) {
+    public Compra update(@PathVariable Integer id, @RequestBody Compra compra) {
         compra.setId_compra(id);
         return compraService.save(compra);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable Integer id) {
         compraService.delete(id);
     }
 }

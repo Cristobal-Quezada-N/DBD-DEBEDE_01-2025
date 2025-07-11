@@ -18,7 +18,7 @@ public class CompraService {
         return compraRepository.findAll();
     }
 
-    public Optional<Compra> getById(Long id){
+    public Optional<Compra> getById(Integer id){
         return compraRepository.findById(id);
     }
 
@@ -26,7 +26,7 @@ public class CompraService {
         return compraRepository.save(compra);
     }
 
-    public void delete(Long id){
+    public void delete(Integer id){
         compraRepository.deleteById(id);
     }
 }
