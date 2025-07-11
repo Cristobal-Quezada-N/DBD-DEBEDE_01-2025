@@ -54,7 +54,7 @@ public class Carrito_Producto {
     @EqualsAndHashCode
     @ToString
     public static class Carrito_ProductoId implements Serializable{
-        private Long id_carrito;
-        private Long id_producto;
+        private Integer id_carrito;
+        private Integer id_producto;
     }
 }
