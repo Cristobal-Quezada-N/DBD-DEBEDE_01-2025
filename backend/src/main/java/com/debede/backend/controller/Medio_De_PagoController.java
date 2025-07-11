@@ -29,7 +29,7 @@ public class Medio_De_PagoController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Medio_De_Pago> getById(@PathVariable Long id) {
+    public Optional<Medio_De_Pago> getById(@PathVariable Integer id) {
         return medio_De_PagoService.getById(id);
     }
 
@@ -39,13 +39,13 @@ public class Medio_De_PagoController {
     }
 
     @PutMapping("/{id}")
-    public Medio_De_Pago update(@PathVariable Long id, @RequestBody Medio_De_Pago medioDePago) {
+    public Medio_De_Pago update(@PathVariable Integer id, @RequestBody Medio_De_Pago medioDePago) {
         medioDePago.setId_medio(id);
         return medio_De_PagoService.save(medioDePago);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable Integer id) {
         medio_De_PagoService.delete(id);
     }
 }

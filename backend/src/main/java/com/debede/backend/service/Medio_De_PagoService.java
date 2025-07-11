@@ -18,7 +18,7 @@ public class Medio_De_PagoService {
         return medio_de_pagoRepository.findAll();
     }
 
-    public Optional<Medio_De_Pago> getById(Long id) {
+    public Optional<Medio_De_Pago> getById(Integer id) {
         return medio_de_pagoRepository.findById(id);
     }
 
@@ -26,7 +26,7 @@ public class Medio_De_PagoService {
         return medio_de_pagoRepository.save(medio_de_pago);
     }
 
-    public void delete(Long id) {
+    public void delete(Integer id) {
         medio_de_pagoRepository.deleteById(id);
     }
 }
