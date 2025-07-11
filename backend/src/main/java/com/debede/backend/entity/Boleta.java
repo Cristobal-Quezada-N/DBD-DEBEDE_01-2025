@@ -21,7 +21,7 @@ import lombok.ToString;
 public class Boleta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_boleta;
+    private Integer id_boleta;
     private String direccion_boleta;
     private Integer valor_boleta;
     private Long numero_boleta;

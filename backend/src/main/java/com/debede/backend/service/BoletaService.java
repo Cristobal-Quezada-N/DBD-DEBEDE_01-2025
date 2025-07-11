@@ -18,7 +18,7 @@ public class BoletaService {
         return boletaRepository.findAll();
     }
 
-    public Optional<Boleta> getById(Long id) {
+    public Optional<Boleta> getById(Integer id) {
         return boletaRepository.findById(id);
     }
 
@@ -26,7 +26,7 @@ public class BoletaService {
         return boletaRepository.save(boleta);
     }
 
-    public void delete(Long id) {
+    public void delete(Integer id) {
         boletaRepository.deleteById(id);
     }
 }

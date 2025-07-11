@@ -27,7 +27,7 @@ public class BoletaController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Boleta> getById(@PathVariable Long id) {
+    public Optional<Boleta> getById(@PathVariable Integer id) {
         return boletaService.getById(id);
     }
 
@@ -37,13 +37,13 @@ public class BoletaController {
     }
 
     @PutMapping("/{id}")
-    public Boleta update(@PathVariable Long id, @RequestBody Boleta boleta) {
+    public Boleta update(@PathVariable Integer id, @RequestBody Boleta boleta) {
         boleta.setId_boleta(id);
         return boletaService.save(boleta);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable Integer id) {
         boletaService.delete(id);
     }
 }
