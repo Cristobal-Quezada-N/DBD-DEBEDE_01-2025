@@ -56,7 +56,7 @@ public class TiendaProducto {
     @EqualsAndHashCode
     @ToString
     public static class TiendaProductoId implements Serializable{
-        private Long id_tienda;
-        private Long id_producto;
+        private Integer id_tienda;
+        private Integer id_producto;
     }
 }

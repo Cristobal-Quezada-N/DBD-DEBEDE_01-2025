@@ -18,7 +18,7 @@ public class TiendaProductoService {
         return tiendaProductoRepository.findAll();
     }
 
-    public Optional<TiendaProducto> getById(Long id) {
+    public Optional<TiendaProducto> getById(Integer id) {
         return tiendaProductoRepository.findById(id);
     }
 
@@ -26,7 +26,7 @@ public class TiendaProductoService {
         return tiendaProductoRepository.save(tiendaProducto);
     }
 
-    public void delete(Long id) {
+    public void delete(Integer id) {
         tiendaProductoRepository.deleteById(id);
     }
 }
