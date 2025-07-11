@@ -18,7 +18,7 @@ public class Carta_TCGService {
         return carta_TCGRepository.findAll();
     }
 
-    public Optional<Carta_TCG> getById(Long id) {
+    public Optional<Carta_TCG> getById(Integer id) {
         return carta_TCGRepository.findById(id);
     }
 
@@ -26,7 +26,7 @@ public class Carta_TCGService {
         return carta_TCGRepository.save(carta_TCG);
     }
 
-    public void delete(Long id) {
+    public void delete(Integer id) {
         carta_TCGRepository.deleteById(id);
     }
 }

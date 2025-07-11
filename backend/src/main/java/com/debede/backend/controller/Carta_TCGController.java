@@ -27,7 +27,7 @@ public class Carta_TCGController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Carta_TCG> getById(@PathVariable Long id) {
+    public Optional<Carta_TCG> getById(@PathVariable Integer id) {
         return carta_tcgService.getById(id);
     }
 
@@ -37,13 +37,13 @@ public class Carta_TCGController {
     }
 
     @PutMapping("/{id}")
-    public Carta_TCG update(@PathVariable Long id, @RequestBody Carta_TCG carta_tcg) {
+    public Carta_TCG update(@PathVariable Integer id, @RequestBody Carta_TCG carta_tcg) {
         carta_tcg.setId_carta(id);
         return carta_tcgService.save(carta_tcg);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable Integer id) {
         carta_tcgService.delete(id);
     }
 }
