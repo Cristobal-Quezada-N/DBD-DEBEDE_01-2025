@@ -29,7 +29,7 @@ public class TiendaController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Tienda> getById(@PathVariable Long id) {
+    public Optional<Tienda> getById(@PathVariable Integer id) {
         return tiendaService.getById(id);
     }
 
@@ -39,13 +39,13 @@ public class TiendaController {
     }
 
     @PutMapping("/{id}")
-    public Tienda update(@PathVariable Long id, @RequestBody Tienda tienda) {
+    public Tienda update(@PathVariable Integer id, @RequestBody Tienda tienda) {
         tienda.setId_tienda(id);;
         return tiendaService.save(tienda);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable Integer id) {
         tiendaService.delete(id);
     }
 
