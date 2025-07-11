@@ -28,7 +28,7 @@ public class ProductoController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Producto> getById(@PathVariable Long id) {
+    public Optional<Producto> getById(@PathVariable Integer id) {
         return productoService.getById(id);
     }
 
@@ -38,13 +38,13 @@ public class ProductoController {
     }
 
     @PutMapping("/{id}")
-    public Producto update(@PathVariable Long id, @RequestBody Producto producto) {
+    public Producto update(@PathVariable Integer id, @RequestBody Producto producto) {
         producto.setId_producto(id);;
         return productoService.save(producto);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable Integer id) {
         productoService.delete(id);
     }
 }

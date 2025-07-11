@@ -25,7 +25,7 @@ import lombok.ToString;
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_producto;
+    private Integer id_producto;
     @ManyToOne
     @JoinColumn(name = "id_carta", nullable = true)
     private Carta_TCG carta;
