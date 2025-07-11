@@ -18,7 +18,7 @@ public class ListaDeseos_ProductoService {
         return  listaDeseos_productoRepository.findAll();
     }
 
-    public Optional<ListaDeseos_Producto> getById(Long id) {
+    public Optional<ListaDeseos_Producto> getById(Integer id) {
         return listaDeseos_productoRepository.findById(id);
     }
 
@@ -26,7 +26,7 @@ public class ListaDeseos_ProductoService {
         return listaDeseos_productoRepository.save(listaDeseos_Producto);
     }
 
-    public void delete(Long id) {
+    public void delete(Integer id) {
         listaDeseos_productoRepository.deleteById(id);
     }
 }

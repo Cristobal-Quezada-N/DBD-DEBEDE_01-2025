@@ -17,7 +17,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "listaDeseos_producto")
+@Table(name = "listadeseos_producto")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -54,7 +54,7 @@ public class ListaDeseos_Producto {
     @EqualsAndHashCode
     @ToString
     public static class ListaDeseos_ProductoId implements Serializable{
-        private Long id_lista_deseos;
-        private Long id_producto;
+        private Integer id_lista_deseos;
+        private Integer id_producto;
     }
 }
