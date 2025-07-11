@@ -1,5 +1,6 @@
 package com.debede.backend.entity;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
@@ -16,7 +17,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "valoracion_producto")
+@Table(name = "valoracion")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -25,11 +26,11 @@ import lombok.ToString;
 public class Valoracion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_valoracion;
+    private Integer id_valoracion;
     @ManyToOne
     @JoinColumn(name = "id_producto")
     private Producto producto;
     private String comentario_valoracion;
     private LocalDate fecha_valoracion;
-    private Integer puntuacion;
+    private BigDecimal puntuacion;
 }

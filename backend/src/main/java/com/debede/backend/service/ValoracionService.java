@@ -18,7 +18,7 @@ public class ValoracionService {
         return valoracion_ProductoRepository.findAll();
     }
 
-    public Optional<Valoracion> getById(Long id){
+    public Optional<Valoracion> getById(Integer id){
         return valoracion_ProductoRepository.findById(id);
     }
 
@@ -26,7 +26,7 @@ public class ValoracionService {
         return valoracion_ProductoRepository.save(valoracion_Producto);
     }
 
-    public void delete(Long id){
+    public void delete(Integer id){
         valoracion_ProductoRepository.deleteById(id);
     }
 }

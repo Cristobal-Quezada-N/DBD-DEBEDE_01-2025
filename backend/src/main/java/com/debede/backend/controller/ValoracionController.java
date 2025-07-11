@@ -29,7 +29,7 @@ public class ValoracionController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Valoracion> getById(@PathVariable Long id) {
+    public Optional<Valoracion> getById(@PathVariable Integer id) {
         return valoracionService.getById(id);
     }
 
@@ -39,13 +39,13 @@ public class ValoracionController {
     }
 
     @PutMapping("/{id}")
-    public Valoracion update(@PathVariable Long id, @RequestBody Valoracion valoracion) {
+    public Valoracion update(@PathVariable Integer id, @RequestBody Valoracion valoracion) {
         valoracion.setId_valoracion(id);;
         return valoracionService.save(valoracion);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable Integer id) {
         valoracionService.delete(id);
     }
 
