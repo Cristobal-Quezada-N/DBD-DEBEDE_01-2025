@@ -18,7 +18,7 @@ public class ListaDeseosService {
         return listaDeseosRepository.findAll();
     }
 
-    public Optional<ListaDeseos> getById(Long id) {
+    public Optional<ListaDeseos> getById(Integer id) {
         return listaDeseosRepository.findById(id);
     }
 
@@ -26,7 +26,7 @@ public class ListaDeseosService {
         return listaDeseosRepository.save(listaDeseos);
     }
 
-    public void delete(Long id){
+    public void delete(Integer id){
         listaDeseosRepository.deleteById(id);
     }
 }

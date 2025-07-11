@@ -12,7 +12,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "lista_deseos")
+@Table(name = "listadeseos")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -21,7 +21,7 @@ import lombok.ToString;
 public class ListaDeseos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_lista_deseos;
+    private Integer id_lista_deseos;
     private Integer productos_en_descuento;
     private Integer cantidad_productos;
 }

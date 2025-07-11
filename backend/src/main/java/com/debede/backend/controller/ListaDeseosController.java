@@ -27,7 +27,7 @@ public class ListaDeseosController {
     }
 
     @GetMapping("/{id}")
-    public Optional<ListaDeseos> getById(@PathVariable Long id) {
+    public Optional<ListaDeseos> getById(@PathVariable Integer id) {
         return listaDeseosService.getById(id);
     }
 
@@ -37,13 +37,13 @@ public class ListaDeseosController {
     }
 
     @PutMapping("/{id}")
-    public ListaDeseos update(@PathVariable Long id, @RequestBody ListaDeseos listaDeseos) {
+    public ListaDeseos update(@PathVariable Integer id, @RequestBody ListaDeseos listaDeseos) {
         listaDeseos.setId_lista_deseos(id);
         return listaDeseosService.save(listaDeseos);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable Integer id) {
         listaDeseosService.delete(id);
     }
 }
