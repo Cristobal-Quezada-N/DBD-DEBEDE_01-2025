@@ -18,7 +18,7 @@ public class Juego_De_MesaService {
         return juego_De_MesaRepository.findAll();
     }
 
-    public Optional<Juego_De_Mesa> getById(Long id){
+    public Optional<Juego_De_Mesa> getById(Integer id){
         return juego_De_MesaRepository.findById(id);
     }
 
@@ -26,7 +26,7 @@ public class Juego_De_MesaService {
         return juego_De_MesaRepository.save(juego_De_Mesa);
     }
 
-    public void delete(Long id){
+    public void delete(Integer id){
         juego_De_MesaRepository.deleteById(id);
     }
 }

@@ -27,7 +27,7 @@ public class Juego_De_MesaController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Juego_De_Mesa> getById(@PathVariable Long id) {
+    public Optional<Juego_De_Mesa> getById(@PathVariable Integer id) {
         return juegoDeMesaService.getById(id);
     }
 
@@ -37,13 +37,13 @@ public class Juego_De_MesaController {
     }
 
     @PutMapping("/{id}")
-    public Juego_De_Mesa update(@PathVariable Long id, @RequestBody Juego_De_Mesa juego_de_mesa) {
-        juego_de_mesa.setId_juego_mesa(id);
+    public Juego_De_Mesa update(@PathVariable Integer id, @RequestBody Juego_De_Mesa juego_de_mesa) {
+        juego_de_mesa.setId_juego_de_mesa(id);
         return juegoDeMesaService.save(juego_de_mesa);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable Integer id) {
         juegoDeMesaService.delete(id);
     }
 }

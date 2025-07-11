@@ -21,8 +21,8 @@ import lombok.ToString;
 public class Juego_De_Mesa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_juego_mesa;
-    private String tipo_juego_mesa;
+    private Integer id_juego_de_mesa;
+    private String tipo_juego_de_mesa;
     private Integer stock_juegos_mesa;
     private String nombre_juegos_mesa;
     private String descripcion_juegos_mesa;

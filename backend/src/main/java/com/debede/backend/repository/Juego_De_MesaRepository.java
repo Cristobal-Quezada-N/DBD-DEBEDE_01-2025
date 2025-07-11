@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface Juego_De_MesaRepository extends JpaRepository<Juego_De_Mesa, Long> {
+public interface Juego_De_MesaRepository extends JpaRepository<Juego_De_Mesa, Integer> {
 
 }
 
