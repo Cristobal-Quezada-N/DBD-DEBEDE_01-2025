@@ -29,7 +29,7 @@ import lombok.ToString;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_usuario;
+    private Integer id_usuario;
     @ManyToOne
     @JoinColumn(name = "id_rol")
     private Rol rol;
@@ -43,5 +43,5 @@ public class Usuario {
     @JdbcTypeCode(SqlTypes.CHAR)
     private String contraseña;
     private String direccion_usuario;
-    private LocalDate fecha_registro;
+    private LocalDate fecha_de_registro;
 }

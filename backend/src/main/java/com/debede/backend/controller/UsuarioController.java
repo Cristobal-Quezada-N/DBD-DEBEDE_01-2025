@@ -30,7 +30,7 @@ public class UsuarioController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Usuario> getById(@PathVariable Long id) {
+    public Optional<Usuario> getById(@PathVariable Integer id) {
         return usuarioService.getById(id);
     }
 
@@ -40,13 +40,13 @@ public class UsuarioController {
     }
 
     @PutMapping("/{id}")
-    public Usuario update(@PathVariable Long id, @RequestBody Usuario usuario) {
+    public Usuario update(@PathVariable Integer id, @RequestBody Usuario usuario) {
         usuario.setId_usuario(id);;
         return usuarioService.save(usuario);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable Integer id) {
         usuarioService.delete(id);
     }
 
