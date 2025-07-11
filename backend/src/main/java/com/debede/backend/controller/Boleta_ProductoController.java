@@ -29,7 +29,7 @@ public class Boleta_ProductoController {
     }
 
     @GetMapping("/{id_boleta}/{id_producto}")
-    public ResponseEntity<Boleta_Producto> getById(@PathVariable Long id_boleta, @PathVariable Long id_producto) {
+    public ResponseEntity<Boleta_Producto> getById(@PathVariable Integer id_boleta, @PathVariable Integer id_producto) {
         Boleta_ProductoId id_boleta_producto = new Boleta_ProductoId(id_boleta, id_producto);
         Optional<Boleta_Producto> boletaProducto = boleta_ProductoService.getById(id_boleta_producto);
         return boletaProducto.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
@@ -41,7 +41,7 @@ public class Boleta_ProductoController {
     }
 
     @PutMapping("/{id_boleta}/{id_producto}")
-    public ResponseEntity<Boleta_Producto> update(@PathVariable Long id_boleta, @PathVariable Long id_producto, @RequestBody Boleta_Producto newBoleta_Producto) {
+    public ResponseEntity<Boleta_Producto> update(@PathVariable Integer id_boleta, @PathVariable Integer id_producto, @RequestBody Boleta_Producto newBoleta_Producto) {
         Boleta_ProductoId id_boleta_producto = new Boleta_ProductoId(id_boleta, id_producto);
         return boleta_ProductoService.getById(id_boleta_producto)
             .map(existing -> {
@@ -54,7 +54,7 @@ public class Boleta_ProductoController {
     }
 
     @DeleteMapping("/{id_boleta}/{id_producto}")
-    public ResponseEntity<Void> delete(@PathVariable Long id_boleta, @PathVariable Long id_producto) {
+    public ResponseEntity<Void> delete(@PathVariable Integer id_boleta, @PathVariable Integer id_producto) {
         Boleta_ProductoId id_boleta_producto = new Boleta_ProductoId(id_boleta, id_producto);
         return boleta_ProductoService.getById(id_boleta_producto)
             .map(boletaProducto -> ResponseEntity.ok().<Void>build())

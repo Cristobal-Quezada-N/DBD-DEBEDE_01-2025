@@ -54,7 +54,7 @@ public class Boleta_Producto {
     @EqualsAndHashCode
     @ToString
     public static class Boleta_ProductoId implements Serializable{
-        private Long id_boleta;
-        private Long id_producto;
+        private Integer id_boleta;
+        private Integer id_producto;
     }
 }
