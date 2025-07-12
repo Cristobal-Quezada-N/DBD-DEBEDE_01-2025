@@ -41,4 +41,8 @@ public class UsuarioService {
     public boolean existsEmail(String email) {
         return usuarioRepository.findByEmail(email).isPresent();
     }
+
+    public Optional<Usuario> login(String email, String contraseña) {
+        return usuarioRepository.findByEmailAndContraseña(email, contraseña);
+    }
 }
