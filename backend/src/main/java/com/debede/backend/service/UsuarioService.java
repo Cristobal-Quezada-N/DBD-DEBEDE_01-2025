@@ -4,6 +4,7 @@ import com.debede.backend.entity.Rol;
 import com.debede.backend.entity.Usuario;
 import com.debede.backend.repository.UsuarioRepository;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,5 +45,19 @@ public class UsuarioService {
 
     public Optional<Usuario> login(String email, String contraseña) {
         return usuarioRepository.findByEmailAndContraseña(email, contraseña);
+    }
+
+    public Optional<Usuario> update(Integer id, Usuario newUser) {
+        return getById(id).map(actual -> {
+            BeanUtils.copyProperties(
+                newUser,
+                actual,
+                "id_usuario",
+                "fecha_registro",
+                "rol",
+                "valoracion"
+            );
+            return save(actual);
+        });
     }
 }

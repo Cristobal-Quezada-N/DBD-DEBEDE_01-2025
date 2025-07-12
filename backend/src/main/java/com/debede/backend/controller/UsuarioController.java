@@ -74,9 +74,15 @@ public class UsuarioController {
     }
 
     @PutMapping("/{id}")
-    public Usuario update(@PathVariable Integer id, @RequestBody Usuario usuario) {
-        usuario.setId_usuario(id);;
-        return usuarioService.save(usuario);
+    public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody Usuario usuario) {
+        Optional<Usuario> updatedUser = usuarioService.update(id, usuario);
+        if (updatedUser.isPresent()) {
+            return ResponseEntity.ok(
+                Interface.responseWithEntity("Usuario Actualizado", updatedUser.get(), "usuario")
+            );
+       }
+       return ResponseEntity.status(HttpStatus.NOT_FOUND)
+       .body("Usuario no encontrado");
     }
 
     @DeleteMapping("/{id}")
