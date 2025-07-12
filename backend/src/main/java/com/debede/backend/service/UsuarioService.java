@@ -37,4 +37,8 @@ public class UsuarioService {
     public void delete(Integer id){
         usuarioRepository.deleteById(id);
     }
+
+    public boolean existsEmail(String email) {
+        return usuarioRepository.findByEmail(email).isPresent();
+    }
 }
