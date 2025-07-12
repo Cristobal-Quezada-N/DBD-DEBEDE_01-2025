@@ -53,3 +53,7 @@ cd backend
 
 1. `cd backend` y `./gradlew build`. Lo anterior generara un archivo `.jar`
 2. Para ejecutar `java -jar build/libs/[nombre-archivo].jar`
+
+## Test
+
+Para testear operaciones basicas ver `docs/TestServer.md`
