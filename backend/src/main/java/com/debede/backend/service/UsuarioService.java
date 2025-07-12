@@ -1,11 +1,13 @@
 package com.debede.backend.service;
 
+import com.debede.backend.entity.Rol;
 import com.debede.backend.entity.Usuario;
 import com.debede.backend.repository.UsuarioRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,6 +15,9 @@ import java.util.Optional;
 public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    private RolService rolService;
 
     public List<Usuario> getAll(){
         return usuarioRepository.findAll();
@@ -23,6 +28,9 @@ public class UsuarioService {
     }
 
     public Usuario save(Usuario usuario){
+        usuario.setFecha_de_registro(LocalDate.now());
+        Rol rolCliente = rolService.getById(3).orElseThrow();
+        usuario.setRol(rolCliente);
         return usuarioRepository.save(usuario);
     }
 
