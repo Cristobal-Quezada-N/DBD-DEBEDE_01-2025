@@ -86,8 +86,8 @@ public class UsuarioController {
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Integer id) {
-        usuarioService.delete(id);
+    public ResponseEntity<String> delete(@PathVariable Integer id) {
+        Map.Entry<HttpStatus, String> response = usuarioService.delete(id);
+        return ResponseEntity.status(response.getKey()).body(response.getValue());
     }
-
 }

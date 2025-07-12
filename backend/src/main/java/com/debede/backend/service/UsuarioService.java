@@ -2,20 +2,26 @@ package com.debede.backend.service;
 
 import com.debede.backend.entity.Rol;
 import com.debede.backend.entity.Usuario;
+import com.debede.backend.repository.Carrito_UsuarioRepository;
 import com.debede.backend.repository.UsuarioRepository;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
 public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    private Carrito_UsuarioRepository carritoUsuarioRepository;
 
     @Autowired
     private RolService rolService;
@@ -35,8 +41,15 @@ public class UsuarioService {
         return usuarioRepository.save(usuario);
     }
 
-    public void delete(Integer id){
+    public Map.Entry<HttpStatus, String> delete(Integer id){
+        if (!getById(id).isPresent()) {
+            return Map.entry(HttpStatus.NOT_FOUND, "Usuario no encontrado");
+        }
+        if (carritoUsuarioRepository.existsByUsuarioId(id)) {
+            return Map.entry(HttpStatus.CONFLICT, "No se puede borrar porque usuario tiene carritos");
+        }
         usuarioRepository.deleteById(id);
+        return Map.entry(HttpStatus.ACCEPTED, "Usuario Borrado");
     }
 
     public boolean existsEmail(String email) {
